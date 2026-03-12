@@ -22,13 +22,13 @@ const ClinicSection = () => {
           </div>
           <div className="md:w-7/12 space-y-4">
             <p className="font-body text-foreground/70 leading-relaxed">
-              A Humana Ortopedia nasceu da união de duas trajetórias médicas, ideias inovadoras e o propósito comum de transformar o cuidado em ortopedia. Criada a partir da parceria entre o Dr. Alfredo Renato Metzger Filho e o Dr. Carlos Vieira, a clínica surge como um espaço dedicado ao cuidado integral da saúde musculoesquelética.
+              A Humana Ortopedia é um espaço dedicado ao cuidado integral da saúde musculoesquelética, com foco em oferecer soluções modernas e seguras para o alívio da dor e a recuperação da mobilidade. Nasceu da parceria entre o Dr. Alfredo Metzger e o Dr. Carlos Vieira, unindo duas trajetórias médicas e o propósito de transformar o cuidado em ortopedia.
             </p>
             <p className="font-body text-foreground/70 leading-relaxed">
-              Mais do que tratar doenças, acreditamos em restaurar o movimento, aliviar a dor e devolver autonomia. Aqui, cada paciente é recebido com escuta ativa, clareza nas orientações e proximidade no acompanhamento.
+              Aqui, o paciente encontra um amplo portfólio terapêutico: infiltrações guiadas por imagem, viscossuplementação articular, terapia por ondas de choque, protocolos de neuromodulação, radiofrequência, neurocrioablação, injetáveis para osteoporose, prescrição de canabinóides e atendimento domiciliar.
             </p>
             <p className="font-body text-foreground/70 leading-relaxed">
-              Nosso compromisso é oferecer um cuidado premium, que combina excelência técnica com acolhimento humano. Acreditamos que ortopedia é mais do que corrigir estruturas: é devolver qualidade de vida, conforto e confiança no próprio corpo.
+              Mais do que tratar doenças, acreditamos em restaurar o movimento, aliviar a dor e devolver autonomia. Nosso compromisso é oferecer cuidado premium que combina excelência técnica com acolhimento humano — devolvendo qualidade de vida, conforto e confiança no próprio corpo.
             </p>
           </div>
         </div>

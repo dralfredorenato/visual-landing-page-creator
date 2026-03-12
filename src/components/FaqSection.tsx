@@ -7,24 +7,32 @@ import {
 
 const faqs = [
   {
-    q: "Por que escolher o Dr. Alfredo Metzger?",
-    a: "Porque é ortopedista com formação sólida, professor de medicina e especialista em Dor e Cuidados Paliativos. Atua com técnicas modernas como infiltrações articulares, neuromodulação com tDCS e prescrição de canabinóides, sempre com foco em segurança, personalização e qualidade de vida do paciente.",
+    q: "O que diferencia a Humana Ortopedia?",
+    a: "A Humana Ortopedia reúne dois especialistas com formações complementares — Dr. Alfredo Metzger (Dor e Cuidados Paliativos, neuromodulação, canabinóides) e Dr. Carlos Vieira (intervencionista da dor, ondas de choque, saúde óssea) — oferecendo um portfólio terapêutico completo e individualizado.",
+  },
+  {
+    q: "Quais são os principais tratamentos oferecidos?",
+    a: "Infiltrações intra e extra-articulares guiadas por imagem, viscossuplementação, terapia por ondas de choque, neuromodulação com tDCS, radiofrequência, neurocrioablação, protocolos para saúde óssea (osteoporose e sarcopenia), prescrição de canabinóides e atendimento domiciliar.",
   },
   {
     q: "Em quais articulações podem ser feitas infiltrações?",
-    a: "O Dr. Alfredo realiza infiltrações em joelhos, quadris, ombros, tornozelos, punhos, mãos, cotovelos e até nas articulações dos dedos, sempre com técnicas guiadas que aumentam a precisão e reduzem riscos.",
-  },
-  {
-    q: "O que é neuromodulação não invasiva com tDCS?",
-    a: "É uma técnica que utiliza correntes elétricas de baixa intensidade para estimular áreas específicas do cérebro relacionadas à percepção da dor. O procedimento é indolor, realizado em consultório e sem necessidade de internação.",
-  },
-  {
-    q: "Como funciona a prescrição de canabinóides?",
-    a: "Após avaliação clínica detalhada, o Dr. Alfredo pode prescrever canabinoides de forma individualizada e dentro das normas médicas. Esses medicamentos auxiliam no controle da dor, da inflamação e de sintomas associados.",
+    a: "Realizamos infiltrações em joelhos, quadris, ombros, tornozelos, punhos, mãos, cotovelos e até nas articulações dos dedos, sempre com técnicas guiadas por imagem que aumentam a precisão e reduzem riscos.",
   },
   {
     q: "Esses tratamentos substituem a cirurgia?",
-    a: "Em muitos casos, sim. O objetivo é oferecer alternativas menos invasivas que aliviem a dor e melhorem a função, adiando ou até evitando a necessidade de procedimentos cirúrgicos.",
+    a: "Em muitos casos, sim. O objetivo é oferecer alternativas minimamente invasivas que aliviem a dor e melhorem a função, adiando ou evitando procedimentos cirúrgicos. Cada caso é avaliado individualmente.",
+  },
+  {
+    q: "O que é neuromodulação com tDCS?",
+    a: "É uma técnica que utiliza correntes elétricas de baixa intensidade para estimular áreas do cérebro relacionadas à percepção da dor. Indolor, realizada em consultório, com sessões de 20 a 30 minutos, eficaz para dor crônica, ansiedade e distúrbios do sono.",
+  },
+  {
+    q: "A Terapia por Ondas de Choque dói?",
+    a: "Não são choques elétricos; trata-se de ondas acústicas de média e alta energia, geralmente bem toleradas sem necessidade de anestesia local. Após o procedimento, o paciente retoma suas atividades normalmente.",
+  },
+  {
+    q: "Como funciona o acompanhamento da saúde óssea?",
+    a: "O Dr. Carlos realiza diagnóstico detalhado com exames e avaliação clínica, indicando tratamentos personalizados para osteoporose e sarcopenia, prevenindo fraturas e ajudando a manter força e autonomia.",
   },
 ];
 

@@ -1,25 +1,35 @@
-import { Heart, Move, Settings, ShieldCheck } from "lucide-react";
+import { Heart, Move, Settings, ShieldCheck, Bone, Zap } from "lucide-react";
 
 const benefits = [
   {
     icon: Heart,
-    title: "Alívio da dor",
-    description: "Tratamentos modernos que reduzem dores crônicas e melhoram o bem-estar diário",
+    title: "Alívio eficaz da dor",
+    description: "Procedimentos modernos e guiados por imagem que reduzem inflamações e desconfortos",
   },
   {
     icon: Move,
     title: "Mais mobilidade",
-    description: "Infiltrações que restauram a função das articulações e facilitam os movimentos",
+    description: "Recuperação progressiva para retomar atividades do dia a dia com segurança",
+  },
+  {
+    icon: Zap,
+    title: "Procedimentos sem cortes",
+    description: "Técnicas minimamente invasivas que evitam internações e cortes desnecessários",
+  },
+  {
+    icon: Bone,
+    title: "Saúde óssea",
+    description: "Diagnóstico e tratamento da osteoporose e sarcopenia para prevenir fraturas",
   },
   {
     icon: Settings,
     title: "Opções personalizadas",
-    description: "Protocolos que incluem tDCS, infiltrações e canabinóides conforme cada necessidade",
+    description: "Protocolos que incluem tDCS, infiltrações, ondas de choque e canabinóides",
   },
   {
     icon: ShieldCheck,
     title: "Segurança e inovação",
-    description: "Procedimentos minimamente invasivos e prescrições dentro das diretrizes médicas atuais",
+    description: "Procedimentos dentro das diretrizes médicas atuais com tecnologia de ponta",
   },
 ];
 
@@ -34,7 +44,7 @@ const BenefitsSection = () => {
           Principais Benefícios
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((b) => (
             <div
               key={b.title}
