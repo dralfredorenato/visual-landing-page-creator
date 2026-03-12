@@ -1,50 +1,93 @@
-import aboutImg from "@/assets/about-alfredo.jpg";
+import aboutAlfredo from "@/assets/about-alfredo.jpg";
+import aboutCarlos from "@/assets/about-carlos.jpg";
 import { MessageCircle } from "lucide-react";
+
+const doctors = [
+  {
+    name: "Dr. Alfredo Metzger",
+    image: aboutAlfredo,
+    crm: "CREMERS 39343",
+    whatsapp: "https://wa.link/izazjx",
+    instagram: "https://www.instagram.com/dr.alfredo.humana.ortopedia/",
+    bio: [
+      "Médico Ortopedista, professor de medicina e especialista em Dor e Cuidados Paliativos. Sua trajetória é marcada pela dedicação ao cuidado humano, sempre unindo ciência, empatia e valores pessoais na prática clínica.",
+      "Formado em Medicina em 2014, concluiu residência em Ortopedia e Traumatologia no Hospital Universitário de Canoas (ULBRA) em 2024. Atualmente se dedica à especialização em Dor e Cuidados Paliativos no HCPA/UFRGS e pós-graduação em Perícia Médica pela Faculdade Unimed.",
+      "Especializado em medicina da dor, neuromodulação e medicina canabinoide, oferece planos terapêuticos individualizados que tratam não apenas a doença, mas a vida como um todo.",
+    ],
+  },
+  {
+    name: "Dr. Carlos Vieira",
+    image: aboutCarlos,
+    crm: "CREMERS 57.754 · RQE 44.416 (Dor) · RQE 44.392 (Ortopedia)",
+    whatsapp: "https://wa.link/s4200f",
+    instagram: "https://www.instagram.com/drcarlosvieira.dor/",
+    bio: [
+      "Ortopedista intervencionista da dor com título em Atuação em Dor reconhecido pela AMB/SBOT. Formação inclui residência em Ortopedia e Traumatologia pela Escola Superior de Ciências da Saúde (Brasília) e fellowship em Medicina Intervencionista da Dor pelo SINPAIN (RJ).",
+      "Com pós-graduações em Dor, Doenças Osteometabólicas e Atuação em Dor, alia conhecimento acadêmico a experiência prática. Membro da SBED (atuando como Diretor de Comitês Científicos), LAPS e AMB.",
+      "Possui graduação em Farmácia Industrial e MBA em Gestão de Processos, trazendo uma visão ampla que combina precisão técnica, inovação e foco em resultados para cada paciente.",
+    ],
+  },
+];
 
 const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 bg-navy-light">
       <div className="container mx-auto px-4">
         <p className="text-center text-sm font-body uppercase tracking-[0.3em] text-gold mb-3">
-          Sobre Mim
+          Nossos Especialistas
         </p>
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-foreground mb-14">
-          Conheça o Dr. Alfredo Metzger
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-foreground mb-16">
+          Conheça os Médicos
         </h2>
 
-        <div className="flex flex-col md:flex-row gap-10 items-center">
-          <div className="md:w-5/12">
-            <img
-              src={aboutImg}
-              alt="Dr. Alfredo Metzger"
-              className="rounded-lg w-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div className="md:w-7/12 space-y-4">
-            <p className="text-sm font-body font-semibold text-gold tracking-wide">
-              CREMERS 39343
-            </p>
-            <p className="font-body text-foreground/70 leading-relaxed">
-              O Dr. Alfredo Renato Metzger Filho é médico Ortopedista, professor de medicina e especialista em Dor e Cuidados Paliativos. Sua trajetória é marcada pela dedicação ao cuidado humano, sempre unindo ciência, empatia e valores pessoais na prática clínica.
-            </p>
-            <p className="font-body text-foreground/70 leading-relaxed">
-              Formado em Medicina em 2014, construiu experiência sólida atuando como emergencista em hospitais e no SAMU. Em 2024 concluiu sua residência em Ortopedia e Traumatologia no Hospital Universitário de Canoas (ULBRA) e atualmente se dedica à especialização em Dor e Cuidados Paliativos no HCPA/UFRGS, além da pós-graduação em Perícia Médica pela Faculdade Unimed.
-            </p>
-            <p className="font-body text-foreground/70 leading-relaxed">
-              Interessado especialmente em medicina da dor, neuromodulação e medicina canabinoide, busca oferecer planos terapêuticos individualizados que tratam não apenas a doença, mas a vida como um todo.
-            </p>
-
-            <a
-              href="https://wa.link/izazjx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold font-body hover:bg-gold-light transition-colors mt-4"
+        <div className="space-y-20">
+          {doctors.map((doc, i) => (
+            <div
+              key={doc.name}
+              className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-10 items-center`}
             >
-              <MessageCircle className="w-4 h-4" />
-              Fale por WhatsApp
-            </a>
-          </div>
+              <div className="md:w-5/12">
+                <img
+                  src={doc.image}
+                  alt={doc.name}
+                  className="rounded-lg w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="md:w-7/12 space-y-4">
+                <h3 className="text-2xl font-heading font-bold text-foreground">
+                  {doc.name}
+                </h3>
+                <p className="text-sm font-body font-semibold text-gold tracking-wide">
+                  {doc.crm}
+                </p>
+                {doc.bio.map((p, j) => (
+                  <p key={j} className="font-body text-foreground/70 leading-relaxed">
+                    {p}
+                  </p>
+                ))}
+                <div className="flex items-center gap-3 pt-2">
+                  <a
+                    href={doc.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-full text-sm font-semibold font-body hover:bg-gold-light transition-colors"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp
+                  </a>
+                  <a
+                    href={doc.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-body text-gold hover:text-gold-light transition-colors underline underline-offset-4"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

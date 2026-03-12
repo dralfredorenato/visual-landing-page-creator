@@ -1,17 +1,27 @@
 import { MessageCircle } from "lucide-react";
 
-const HERO_BG = "https://humanaortopedia.com.br/wp-content/uploads/2025/09/BG-PC-Alfredo.png";
+const HERO_ALFREDO = "https://humanaortopedia.com.br/wp-content/uploads/2025/09/BG-PC-Alfredo.png";
+const HERO_CARLOS = "https://humanaortopedia.com.br/wp-content/uploads/2025/10/Carlos-PC-1-535x1024.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30 z-10" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-navy-light" />
+
+      {/* Doctor images */}
+      <div className="absolute right-0 top-0 h-full w-full pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/20 z-10" />
         <img
-          src={HERO_BG}
+          src={HERO_ALFREDO}
           alt="Dr. Alfredo Metzger"
-          className="absolute right-0 top-0 h-full w-auto max-w-none object-cover object-top"
+          className="absolute right-[15%] top-0 h-full w-auto max-w-none object-cover object-top opacity-70 hidden lg:block"
+          loading="eager"
+        />
+        <img
+          src={HERO_CARLOS}
+          alt="Dr. Carlos Vieira"
+          className="absolute right-0 top-0 h-full w-auto max-w-none object-cover object-top opacity-80"
           loading="eager"
         />
       </div>
@@ -19,24 +29,37 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 pt-24">
         <div className="max-w-2xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-foreground mb-6">
-            Tratamentos Modernos para Dor Crônica e Limitações Articulares
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-foreground mb-6">
+            Ortopedia Especializada no Tratamento da Dor e Qualidade de Vida
           </h1>
 
           <p className="text-base md:text-lg font-body text-foreground/75 mb-8 leading-relaxed max-w-xl">
-            Ortopedista com especialização em Dor e Cuidados Paliativos, oferecendo infiltrações articulares, neuromodulação com tDCS e prescrição de canabinoides para aliviar a dor e recuperar qualidade de vida.
+            A Humana Ortopedia reúne dois especialistas dedicados ao cuidado integral da dor crônica, saúde óssea e limitações articulares — com técnicas modernas, minimamente invasivas e atendimento humanizado.
           </p>
 
-          <div className="mb-8 space-y-1">
-            <p className="text-sm font-body font-semibold text-gold tracking-wide">
-              Ortopedista — CREMERS 39343
-            </p>
-            <p className="text-sm font-body text-foreground/60">
-              Especialista em Dor e Cuidados Paliativos
-            </p>
-            <p className="text-sm font-body text-foreground/60">
-              Professor de Medicina — ULBRA
-            </p>
+          <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-background/40 backdrop-blur-sm border border-border rounded-lg p-4">
+              <p className="text-sm font-body font-semibold text-gold">
+                Dr. Alfredo Metzger
+              </p>
+              <p className="text-xs font-body text-foreground/55 mt-1">
+                CREMERS 39343
+              </p>
+              <p className="text-xs font-body text-foreground/55">
+                Ortopedista · Dor e Cuidados Paliativos
+              </p>
+            </div>
+            <div className="bg-background/40 backdrop-blur-sm border border-border rounded-lg p-4">
+              <p className="text-sm font-body font-semibold text-gold">
+                Dr. Carlos Vieira
+              </p>
+              <p className="text-xs font-body text-foreground/55 mt-1">
+                CREMERS 57.754 · RQE 44.416
+              </p>
+              <p className="text-xs font-body text-foreground/55">
+                Ortopedista · Intervencionista da Dor
+              </p>
+            </div>
           </div>
 
           <p className="text-sm font-body text-foreground/60 mb-4">
