@@ -3,8 +3,8 @@ import ScrollReveal from "./ScrollReveal";
 const stats = [
   { value: "10+", label: "Anos de experiência" },
   { value: "2", label: "Especialistas" },
-  { value: "3", label: "Locais de atendimento" },
   { value: "12+", label: "Técnicas avançadas" },
+  { value: "MedPlex", label: "Santana · Porto Alegre" },
 ];
 
 const SocialProofStrip = () => {
