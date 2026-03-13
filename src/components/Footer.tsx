@@ -42,7 +42,7 @@ const Footer = () => {
             <p className="font-body text-xs uppercase tracking-widest text-gold/60 mb-3">Redes sociais</p>
             <div className="flex gap-4">
               <a
-                href="https://www.instagram.com/dr.alfredo.humana.ortopedia/"
+                href="https://www.instagram.com/humana.ortopedia/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/40 transition-colors"
