@@ -1,8 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
-
-const HERO_ALFREDO = "https://humanaortopedia.com.br/wp-content/uploads/2025/09/BG-PC-Alfredo.png";
-const HERO_CARLOS = "https://humanaortopedia.com.br/wp-content/uploads/2025/10/Carlos-PC-1-535x1024.png";
+import logo from "@/assets/logo-humana-branco.png";
 
 const HeroSection = () => {
   return (
@@ -10,32 +8,28 @@ const HeroSection = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-navy-light" />
 
-      {/* Doctor images */}
-      <div className="absolute right-0 top-0 h-full w-full pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/10 z-10" />
-        <motion.img
-          src={HERO_ALFREDO}
-          alt="Dr. Alfredo Metzger"
-          className="absolute right-[15%] top-0 h-full w-auto max-w-none object-cover object-top hidden lg:block"
-          loading="eager"
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 0.6, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
+      {/* Subtle logo watermark */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+      >
+        <img
+          src={logo}
+          alt=""
+          aria-hidden="true"
+          className="w-[500px] md:w-[700px] max-w-[80vw] opacity-[0.03] select-none"
         />
-        <motion.img
-          src={HERO_CARLOS}
-          alt="Dr. Carlos Vieira"
-          className="absolute right-0 top-0 h-full w-auto max-w-none object-cover object-top"
-          loading="eager"
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 0.75, x: 0 }}
-          transition={{ duration: 1.2, delay: 0.5 }}
-        />
-      </div>
+      </motion.div>
+
+      {/* Decorative gradient orbs */}
+      <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gold/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-gold/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 pt-24 pb-16">
-        <div className="max-w-xl">
+        <div className="max-w-xl mx-auto text-center md:text-left md:mx-0">
           <motion.p
             className="text-xs font-body uppercase tracking-[0.4em] text-gold mb-5"
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +51,7 @@ const HeroSection = () => {
           </motion.h1>
 
           <motion.p
-            className="text-base font-body text-foreground/65 mb-8 leading-relaxed max-w-md"
+            className="text-base font-body text-foreground/65 mb-8 leading-relaxed max-w-md mx-auto md:mx-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -66,7 +60,7 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-3"
+            className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
@@ -90,7 +84,7 @@ const HeroSection = () => {
 
           {/* Trust badges */}
           <motion.div
-            className="mt-10 flex items-center gap-6 text-foreground/40"
+            className="mt-10 flex items-center gap-6 text-foreground/40 justify-center md:justify-start"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}

@@ -1,5 +1,6 @@
 import logo from "@/assets/logo-humana-branco.png";
 import ScrollReveal from "./ScrollReveal";
+import { MapPin } from "lucide-react";
 
 const FooterCta = () => {
   return (
@@ -8,6 +9,12 @@ const FooterCta = () => {
         <ScrollReveal>
           <div className="flex flex-col items-center gap-5">
             <img src={logo} alt="Humana Ortopedia" className="h-12 opacity-50" />
+            <div className="flex items-center gap-2 text-foreground/40">
+              <MapPin className="w-3.5 h-3.5" />
+              <p className="text-xs font-body">
+                Rua Gomes Jardim, 201, sala 505 – MedPlex Santana – Porto Alegre/RS
+              </p>
+            </div>
             <div className="flex items-center gap-4">
               <a
                 href="https://www.instagram.com/dr.alfredo.humana.ortopedia/"

@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Onde ficam os consultórios?",
-    a: "Atendemos em 3 locais em Porto Alegre: Humana Ortopedia (MedPlex Santana), Centro de Tratamento da Dor (Moinhos de Vento) e consultório particular do Dr. Carlos.",
+    a: "Nosso consultório fica no MedPlex Santana — Rua Gomes Jardim, 201, sala 505, Bairro Santana, Porto Alegre/RS.",
   },
 ];
 
