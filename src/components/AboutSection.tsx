@@ -53,7 +53,7 @@ const AboutSection = () => {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <ScrollReveal delay={0.15} className="md:order-2">
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto w-full">
-              <img src={aboutCarlos} alt="Dr. Carlos Eduardo Gomes Vieira" className="w-full h-full object-cover" />
+              <img src={aboutCarlos} alt="Dr. Carlos Eduardo Gomes Vieira" className="w-full h-full object-cover object-top" />
             </div>
           </ScrollReveal>
           <ScrollReveal className="md:order-1">
