@@ -13,10 +13,10 @@ const HowItWorksSection = () => {
     <section id="como-funciona" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-3" style={{ textWrap: "balance" }}>
             Da primeira dúvida à recuperação
           </h2>
-          <p className="text-center text-muted-foreground font-body mb-16 max-w-xl mx-auto">
+          <p className="text-center text-muted-foreground font-body mb-16 max-w-xl mx-auto" style={{ textWrap: "balance" }}>
             Sem mistério. Sem enrolação. Com você em cada etapa.
           </p>
         </ScrollReveal>
@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
               <div className="text-center md:text-left relative">
                 <span className="text-5xl font-heading font-bold text-gold/30 block mb-2">{s.num}</span>
                 <h3 className="font-heading text-xl font-bold text-foreground mb-2">{s.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed" style={{ textWrap: "pretty" }}>{s.desc}</p>
                 {i < steps.length - 1 && (
                   <div className="hidden md:block absolute top-8 right-0 w-12 h-px bg-gold/20 translate-x-8" />
                 )}

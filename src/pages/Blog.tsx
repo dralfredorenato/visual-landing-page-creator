@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Camera, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -32,10 +32,10 @@ const Blog = () => {
       {/* Header */}
       <section className="bg-background pt-24 pb-14">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-3">
+          <h1 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-3" style={{ textWrap: "balance" }}>
             Blog Humana Ortopedia
           </h1>
-          <p className="font-body text-muted-foreground max-w-lg mx-auto">
+          <p className="font-body text-muted-foreground max-w-lg mx-auto" style={{ textWrap: "balance" }}>
             Publicações sobre ortopedia, dor e qualidade de vida — escritas pelos nossos especialistas
           </p>
         </div>
@@ -82,18 +82,23 @@ const Blog = () => {
 
 const PostCard = ({ post }: { post: Post }) => (
   <div className="border border-surface-foreground/10 rounded-xl overflow-hidden bg-white/50 group h-full flex flex-col">
-    <div className="aspect-video bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center">
-      <Camera className="w-8 h-8 text-surface-foreground/20" />
+    <div className="aspect-video overflow-hidden">
+      <img
+        src={post.imagemDestaque}
+        alt={post.titulo}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        loading="lazy"
+      />
     </div>
     <div className="p-5 flex flex-col flex-1">
       <span className={`inline-block text-xs font-body font-medium px-2.5 py-0.5 rounded-full mb-3 self-start ${categoryColors[post.categoria] || "bg-gray-100 text-gray-700"}`}>
         {post.categoria}
       </span>
-      <h3 className="font-heading text-lg font-bold text-surface-foreground mb-2 leading-snug">{post.titulo}</h3>
+      <h3 className="font-heading text-lg font-bold text-surface-foreground mb-2 leading-snug" style={{ textWrap: "balance" }}>{post.titulo}</h3>
       <p className="font-body text-xs text-surface-foreground/50 mb-2">
         {post.autor} · {new Date(post.dataPublicacao).toLocaleDateString("pt-BR")} · {post.tempoLeitura} min de leitura
       </p>
-      <p className="font-body text-sm text-surface-foreground/70 leading-relaxed line-clamp-2 mb-4 flex-1">{post.resumo}</p>
+      <p className="font-body text-sm text-surface-foreground/70 leading-relaxed line-clamp-2 mb-4 flex-1" style={{ textWrap: "pretty" }}>{post.resumo}</p>
       <Link
         to={`/blog/${post.slug}`}
         className="inline-flex items-center gap-1 text-gold text-sm font-body font-medium hover:underline"

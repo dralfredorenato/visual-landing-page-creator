@@ -5,12 +5,12 @@ const CtaSection = () => {
     <section className="py-20 md:py-28 bg-gold">
       <div className="container mx-auto px-4 text-center">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-4 leading-tight" style={{ textWrap: "balance" }}>
             Sua dor tem causa. Tem nome. Tem tratamento.
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <p className="font-body text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+          <p className="font-body text-primary-foreground/80 mb-8 max-w-xl mx-auto" style={{ textWrap: "balance" }}>
             Dê o primeiro passo. Uma consulta pode mudar o curso da sua vida.
           </p>
         </ScrollReveal>

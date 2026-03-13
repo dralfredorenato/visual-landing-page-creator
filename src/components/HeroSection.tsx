@@ -22,6 +22,7 @@ const HeroSection = () => {
         {/* Headline */}
         <motion.h1
           className="text-3xl md:text-5xl lg:text-[56px] font-heading font-bold leading-[1.1] text-foreground mb-4"
+          style={{ textWrap: "balance" }}
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6, ease: "easeOut" }}
@@ -31,9 +32,10 @@ const HeroSection = () => {
           <span className="text-gold">sua jornada começa aqui.</span>
         </motion.h1>
 
-        {/* Subtitle — shorter */}
+        {/* Subtitle */}
         <motion.p
           className="text-base md:text-lg font-body text-muted-foreground mb-10 max-w-md mx-auto leading-relaxed"
+          style={{ textWrap: "balance" }}
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}

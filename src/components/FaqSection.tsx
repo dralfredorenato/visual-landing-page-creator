@@ -42,7 +42,7 @@ const FaqSection = () => {
     <section id="faq" className="py-20 md:py-28 bg-surface">
       <div className="container mx-auto px-4 max-w-3xl">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-14" style={{ textWrap: "balance" }}>
             Perguntas frequentes
           </h2>
         </ScrollReveal>
@@ -55,10 +55,10 @@ const FaqSection = () => {
                 value={`faq-${i}`}
                 className="border border-surface-foreground/10 rounded-xl px-5 data-[state=open]:border-gold/30"
               >
-                <AccordionTrigger className="font-body text-sm font-medium text-surface-foreground hover:no-underline py-4">
+                <AccordionTrigger className="font-body text-sm font-medium text-surface-foreground hover:no-underline py-4 text-left" style={{ textWrap: "balance" }}>
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="font-body text-sm text-surface-foreground/70 leading-relaxed">
+                <AccordionContent className="font-body text-sm text-surface-foreground/70 leading-relaxed" style={{ textWrap: "pretty" }}>
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
