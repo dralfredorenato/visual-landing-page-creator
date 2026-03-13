@@ -1,5 +1,5 @@
-import { Camera } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import aboutClinica from "@/assets/about-clinica.jpg";
 
 const PainSection = () => {
   return (
@@ -39,9 +39,8 @@ const PainSection = () => {
           </div>
 
           <ScrollReveal delay={0.15}>
-            <div className="aspect-[4/3] rounded-xl overflow-hidden bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center shadow-lg">
-              {/* SUBSTITUIR: imagem clínica profissional */}
-              <Camera className="w-12 h-12 text-surface-foreground/20" />
+            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+              <img src={aboutClinica} alt="Clínica Humana Ortopedia" className="w-full h-full object-cover" />
             </div>
           </ScrollReveal>
         </div>
