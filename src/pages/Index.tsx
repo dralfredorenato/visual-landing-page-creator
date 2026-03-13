@@ -1,11 +1,17 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SocialProofStrip from "@/components/SocialProofStrip";
+import PainSection from "@/components/PainSection";
+import TherapeuticTargetsSection from "@/components/TherapeuticTargetsSection";
 import TreatmentsSection from "@/components/TreatmentsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import AboutSection from "@/components/AboutSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import DifferentialsSection from "@/components/DifferentialsSection";
+import GoogleReviews from "@/components/GoogleReviews";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
+import ContactSection from "@/components/ContactSection";
 import FaqSection from "@/components/FaqSection";
-import FooterCta from "@/components/FooterCta";
+import CtaSection from "@/components/CtaSection";
+import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
@@ -13,12 +19,18 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
-      <SocialProofStrip />
+      <PainSection />
+      <TherapeuticTargetsSection />
       <TreatmentsSection />
+      <HowItWorksSection />
       <AboutSection />
-      <TestimonialsSection />
+      <DifferentialsSection />
+      <GoogleReviews />
+      <BlogPreviewSection />
+      <ContactSection />
       <FaqSection />
-      <FooterCta />
+      <CtaSection />
+      <Footer />
       <FloatingWhatsApp />
     </div>
   );
