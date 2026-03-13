@@ -15,9 +15,9 @@ const TherapeuticTargetsSection = () => {
     <section id="alvos" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-3">
-            Onde tratamos
-          </h2>
+           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-3">
+              Nossos alvos terapêuticos
+           </h2>
           <p className="text-center text-muted-foreground font-body mb-14 max-w-xl mx-auto">
             Abordagem especializada para cada região do corpo
           </p>
