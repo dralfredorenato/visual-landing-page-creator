@@ -16,15 +16,16 @@ const doctors = [
     ],
   },
   {
-    name: "Dr. Carlos Vieira",
+    name: "Dr. Carlos Eduardo Gomes Vieira",
     image: aboutCarlos,
-    crm: "CREMERS 57.754 · RQE 44.416 (Dor) · RQE 44.392 (Ortopedia)",
-    whatsapp: "https://wa.link/s4200f",
+    crm: "CREMERS 57.754 · RQE 44.416 (Atuação em Dor) · RQE 44.392 (Ortopedia e Traumatologia)",
+    whatsapp: "https://wa.me/5551991932662",
     instagram: "https://www.instagram.com/drcarlosvieira.dor/",
     bio: [
-      "Ortopedista intervencionista da dor com título em Atuação em Dor reconhecido pela AMB/SBOT. Formação inclui residência em Ortopedia e Traumatologia pela Escola Superior de Ciências da Saúde (Brasília) e fellowship em Medicina Intervencionista da Dor pelo SINPAIN (RJ).",
-      "Com pós-graduações em Dor, Doenças Osteometabólicas e Atuação em Dor, alia conhecimento acadêmico a experiência prática. Membro da SBED (atuando como Diretor de Comitês Científicos), LAPS e AMB.",
-      "Possui graduação em Farmácia Industrial e MBA em Gestão de Processos, trazendo uma visão ampla que combina precisão técnica, inovação e foco em resultados para cada paciente.",
+      "Médico Intervencionista da Dor com título de especialista pela AMB/SBOT em Atuação em Dor. Iniciou sua jornada na saúde ainda criança, nos balcões da farmácia de seu pai no interior de São Paulo, onde aprendeu que \"gente precisa de gente\".",
+      "Graduou-se em Farmácia, especializou-se em Produção de Medicamentos e construiu uma trajetória de sucesso em importantes indústrias farmacêuticas nacionais. Após 12 anos, ressignificou-se realizando seu sonho de ser médico. Graduou-se em Medicina pelo Centro Universitário Barão de Mauá (Ribeirão Preto/SP) e fez residência em Ortopedia e Traumatologia pela ESCS/DF.",
+      "Formação em Medicina da Dor (Faculdade APM, Goiânia/GO), fellowship em Medicina Intervencionista da Dor (Clínica Aliviar/SINPAIN, Rio de Janeiro/RJ) e Dor e Osteometabolismo. Autor de capítulos nos livros \"Medicina da Dor\" e \"Atlas de Intervenção em Dor\".",
+      "Membro da LAPS (Latin American Pain Society) e da SBED (Sociedade Brasileira para o Estudo da Dor), onde atuou como secretário do Comitê de Técnicas Intervencionistas e como Diretor de Comitês. Destacado por abordagem técnica, empática e humanizada, com foco no resultado e compromisso com o alívio da dor.",
     ],
   },
 ];
