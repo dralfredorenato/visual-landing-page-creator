@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Camera, Clock, User } from "lucide-react";
+import { ArrowLeft, Clock, User } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -36,13 +36,17 @@ const BlogPost = () => {
           <span className="truncate max-w-[200px]">{post.titulo}</span>
         </nav>
 
-        {/* Hero image placeholder */}
-        <div className="aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center shadow-lg mb-8">
-          <Camera className="w-12 h-12 text-surface-foreground/20" />
+        {/* Hero image */}
+        <div className="aspect-video rounded-xl overflow-hidden shadow-lg mb-8">
+          <img
+            src={post.imagemDestaque}
+            alt={post.titulo}
+            className="w-full h-full object-cover"
+          />
         </div>
 
         {/* Title + meta */}
-        <h1 className="font-heading text-3xl md:text-4xl lg:text-[48px] font-bold text-surface-foreground leading-tight mb-4">
+        <h1 className="font-heading text-3xl md:text-4xl lg:text-[48px] font-bold text-surface-foreground leading-tight mb-4" style={{ textWrap: "balance" }}>
           {post.titulo}
         </h1>
         <div className="flex flex-wrap items-center gap-4 text-sm font-body text-surface-foreground/50 mb-10">
@@ -60,6 +64,7 @@ const BlogPost = () => {
         {/* Content */}
         <div
           className="prose prose-lg max-w-none font-body text-surface-foreground/80 leading-relaxed [&_p]:mb-5"
+          style={{ textWrap: "pretty" }}
           dangerouslySetInnerHTML={{ __html: post.conteudo }}
         />
 

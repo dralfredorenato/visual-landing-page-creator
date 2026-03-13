@@ -44,10 +44,10 @@ const TreatmentsSection = () => {
     <section id="tratamentos" className="py-20 md:py-28 bg-surface">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-3">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-3" style={{ textWrap: "balance" }}>
             Nossos Tratamentos
           </h2>
-          <p className="text-center text-surface-foreground/60 font-body mb-14 max-w-2xl mx-auto">
+          <p className="text-center text-surface-foreground/60 font-body mb-14 max-w-2xl mx-auto" style={{ textWrap: "balance" }}>
             Tecnologia avançada. Abordagem minimamente invasiva. Resultado com segurança.
           </p>
         </ScrollReveal>
@@ -57,14 +57,14 @@ const TreatmentsSection = () => {
             <ScrollReveal key={t.title} delay={i * 0.05}>
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className={`w-full text-left border rounded-xl p-5 transition-all duration-300 group ${
+                className={`w-full text-left border rounded-xl p-5 transition-all duration-300 group h-full ${
                   openIndex === i
                     ? "border-gold/50 bg-surface-foreground/5"
                     : "border-surface-foreground/10 hover:border-gold/30"
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="font-heading text-lg font-bold text-surface-foreground leading-snug">{t.title}</h3>
+                  <h3 className="font-heading text-lg font-bold text-surface-foreground leading-snug" style={{ textWrap: "balance" }}>{t.title}</h3>
                   <ChevronDown
                     className={`w-5 h-5 text-gold shrink-0 mt-1 transition-transform duration-300 ${
                       openIndex === i ? "rotate-180" : ""
@@ -76,7 +76,7 @@ const TreatmentsSection = () => {
                     openIndex === i ? "max-h-40 mt-3 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="font-body text-sm text-surface-foreground/70 leading-relaxed">{t.desc}</p>
+                  <p className="font-body text-sm text-surface-foreground/70 leading-relaxed" style={{ textWrap: "pretty" }}>{t.desc}</p>
                 </div>
               </button>
             </ScrollReveal>

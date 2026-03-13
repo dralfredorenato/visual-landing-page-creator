@@ -8,7 +8,7 @@ const AboutSection = () => {
     <section id="sobre" className="py-20 md:py-28 bg-surface">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-16" style={{ textWrap: "balance" }}>
             Conheça os especialistas
           </h2>
         </ScrollReveal>
@@ -29,9 +29,9 @@ const AboutSection = () => {
                 Dr. Alfredo Renato Metzger Filho
               </h3>
               <p className="font-body text-sm text-gold mb-4">
-                Ortopedista | Especialista em Dor e Cuidados Paliativos
+                Ortopedista · Especialista em Dor e Cuidados Paliativos
               </p>
-              <p className="font-body text-surface-foreground/70 leading-relaxed mb-6">
+              <p className="font-body text-surface-foreground/70 leading-relaxed mb-6" style={{ textWrap: "pretty" }}>
                 Médico ortopedista, professor de medicina e especialista em Dor e Cuidados Paliativos pelo HCPA/UFRGS. Residência em Ortopedia e Traumatologia pelo Hospital Universitário de Canoas (ULBRA). Atua com infiltrações articulares guiadas por imagem, neuromodulação com tDCS e prescrição de canabinóides, sempre com foco no cuidado humano e na qualidade de vida.
               </p>
               <a
@@ -59,15 +59,15 @@ const AboutSection = () => {
           <ScrollReveal className="md:order-1">
             <div>
               <span className="inline-block border border-gold/40 text-gold text-xs font-body uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-                CREMERS 57.754 | RQE 44.416 | RQE 44.392
+                CREMERS 57.754 · RQE 44.416 · RQE 44.392
               </span>
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-surface-foreground mb-1">
                 Dr. Carlos Eduardo Gomes Vieira
               </h3>
               <p className="font-body text-sm text-gold mb-4">
-                Médico Intervencionista da Dor | Ortopedista
+                Médico Intervencionista da Dor · Ortopedista
               </p>
-              <p className="font-body text-surface-foreground/70 leading-relaxed mb-6">
+              <p className="font-body text-surface-foreground/70 leading-relaxed mb-6" style={{ textWrap: "pretty" }}>
                 Especialista em Medicina Intervencionista da Dor com título AMB/SBOT em Atuação em Dor. Membro da SBED e da LAPS. Diretor de Comitês da SBED. Autor de capítulos de livros em medicina da dor. Destaca-se por procedimentos minimamente invasivos como radiofrequência, neurocrioablação e bloqueios guiados por imagem, com abordagem técnica, empática e orientada ao resultado.
               </p>
               <a

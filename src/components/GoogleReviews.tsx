@@ -38,7 +38,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
   const initials = review.author.split(" ").map((n) => n[0]).join("").slice(0, 2);
 
   return (
-    <div className="border border-surface-foreground/10 rounded-xl p-6 bg-white/50">
+    <div className="border border-surface-foreground/10 rounded-xl p-6 bg-white/50 h-full flex flex-col">
       <div className="flex items-center gap-3 mb-3">
         <div className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center">
           <span className="text-sm font-bold text-gold font-body">{initials}</span>
@@ -48,7 +48,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
           <p className="font-body text-xs text-surface-foreground/50">{review.location}</p>
         </div>
       </div>
-      <span className="inline-block text-xs font-body bg-gold/10 text-gold px-2.5 py-0.5 rounded-full mb-3">
+      <span className="inline-block text-xs font-body bg-gold/10 text-gold px-2.5 py-0.5 rounded-full mb-3 self-start">
         {review.context}
       </span>
       <div className="flex gap-0.5 mb-3">
@@ -56,7 +56,7 @@ const ReviewCard = ({ review }: { review: Review }) => {
           <Star key={i} className="w-4 h-4 fill-gold text-gold" />
         ))}
       </div>
-      <p className="font-body text-sm text-surface-foreground/70 leading-relaxed italic">
+      <p className="font-body text-sm text-surface-foreground/70 leading-relaxed italic flex-1" style={{ textWrap: "pretty" }}>
         "{review.text}"
       </p>
     </div>
@@ -86,7 +86,6 @@ const GoogleReviews = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Attempt API fetch, fallback to static reviews
     const fetchReviews = async () => {
       try {
         const res = await fetch("/api/google-reviews");
@@ -100,7 +99,6 @@ const GoogleReviews = () => {
       }
     };
 
-    // Short delay for skeleton UX
     const timer = setTimeout(fetchReviews, 800);
     return () => clearTimeout(timer);
   }, []);
@@ -109,7 +107,7 @@ const GoogleReviews = () => {
     <section id="depoimentos" className="py-20 md:py-28 bg-surface">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-14" style={{ textWrap: "balance" }}>
             O que dizem nossos pacientes
           </h2>
         </ScrollReveal>
@@ -137,7 +135,6 @@ const GoogleReviews = () => {
             </div>
             <span className="font-semibold text-surface-foreground">5.0</span>
             <span>|</span>
-            {/* SUBSTITUIR: usar Place ID real da clínica */}
             <a
               href="https://g.page/r/PLACE_ID/review"
               target="_blank"
