@@ -1,103 +1,87 @@
-import infiltracoesImg from "@/assets/infiltracoes.jpg";
-import tdcsImg from "@/assets/tdcs.jpg";
-import canabinoidesImg from "@/assets/canabinoides.jpg";
-import ondasChoqueImg from "@/assets/ondas-choque.jpg";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { MessageCircle } from "lucide-react";
 
 const treatments = [
   {
-    title: "Infiltrações Guiadas",
-    image: infiltracoesImg,
-    summary: "Procedimentos minimamente invasivos guiados por ultrassom ou radioscopia para alívio preciso da dor em articulações, tendões e nervos.",
-    tags: ["Viscossuplementação", "Proloterapia", "Radiofrequência"],
+    title: "Infiltrações Articulares Guiadas por Imagem",
+    desc: "Aplicação precisa de medicamentos ou agentes biológicos em articulações, tendões e nervos. Guiadas por ultrassom para máxima segurança e eficácia.",
   },
   {
-    title: "Ondas de Choque",
-    image: ondasChoqueImg,
-    summary: "Ondas acústicas de alta energia que promovem regeneração tecidual e alívio de dores musculoesqueléticas — sem cortes ou internação.",
-    tags: ["Tendinites", "Fascite Plantar", "Dor Miofascial"],
+    title: "Viscossuplementação",
+    desc: "Injeção de ácido hialurônico para artrose leve a moderada. Reduz dor, protege e hidrata a cartilagem, melhora a mobilidade.",
   },
   {
-    title: "Neuromodulação tDCS",
-    image: tdcsImg,
-    summary: "Estimulação cerebral por correntes de baixa intensidade para dor crônica, ansiedade e distúrbios do sono. Indolor, sessões de 20–30 min.",
-    tags: ["Dor Crônica", "Sono", "Ansiedade"],
+    title: "Terapia por Ondas de Choque",
+    desc: "Ondas acústicas não invasivas para tendinites, dor miofascial e fascite plantar. Promove regeneração tecidual e alívio da dor.",
   },
   {
-    title: "Canabinóides Medicinais",
-    image: canabinoidesImg,
-    summary: "Prescrição individualizada que modula dor, inflamação e bem-estar, reduzindo dependência de analgésicos convencionais.",
-    tags: ["Dor", "Inflamação", "Bem-estar"],
+    title: "Radiofrequência",
+    desc: "Ablativa, pulsada ou refrigerada. Interrompe a transmissão do sinal de dor em nervos específicos com precisão controlada.",
+  },
+  {
+    title: "Neuromodulação com tDCS",
+    desc: "Estimulação cerebral transcraniana de baixa intensidade para dor crônica, ansiedade e distúrbios do sono. Indolor, em consultório, sem internação.",
+  },
+  {
+    title: "Neurocrioablação",
+    desc: "Congelamento seletivo do nervo responsável pela condução da dor. Procedimento minimamente invasivo com resultado duradouro.",
+  },
+  {
+    title: "Prescrição de Canabinóides",
+    desc: "Avaliação criteriosa e prescrição individualizada dentro da regulamentação médica. Indicado para dor crônica, fibromialgia e condições autoimunes.",
+  },
+  {
+    title: "Atendimento Domiciliar",
+    desc: "Protocolo completo de consultas e procedimentos para pacientes com mobilidade reduzida. Cuidado premium no conforto do lar.",
   },
 ];
 
 const TreatmentsSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
-    <section id="tratamentos" className="py-20 bg-background">
+    <section id="tratamentos" className="py-20 md:py-28 bg-surface">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <p className="text-center text-xs font-body uppercase tracking-[0.4em] text-gold mb-3">
-            Tratamentos
-          </p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-foreground mb-4">
-            Tecnologia a serviço do alívio
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-3">
+            Nossos Tratamentos
           </h2>
-          <p className="text-center font-body text-foreground/50 max-w-lg mx-auto mb-14 text-sm">
-            Procedimentos modernos que evitam cirurgias e devolvem qualidade de vida.
+          <p className="text-center text-surface-foreground/60 font-body mb-14 max-w-2xl mx-auto">
+            Tecnologia avançada. Abordagem minimamente invasiva. Resultado com segurança.
           </p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {treatments.map((t, i) => (
-            <ScrollReveal key={t.title} delay={i * 0.1}>
-              <div className="group relative rounded-2xl overflow-hidden border border-border bg-card h-full">
-                <div className="h-48 overflow-hidden">
-                  <img
-                    src={t.image}
-                    alt={t.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
+            <ScrollReveal key={t.title} delay={i * 0.05}>
+              <button
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className={`w-full text-left border rounded-xl p-5 transition-all duration-300 group ${
+                  openIndex === i
+                    ? "border-gold/50 bg-surface-foreground/5"
+                    : "border-surface-foreground/10 hover:border-gold/30"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="font-heading text-lg font-bold text-surface-foreground leading-snug">{t.title}</h3>
+                  <ChevronDown
+                    className={`w-5 h-5 text-gold shrink-0 mt-1 transition-transform duration-300 ${
+                      openIndex === i ? "rotate-180" : ""
+                    }`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
                 </div>
-                <div className="relative p-6 -mt-8 z-10">
-                  <h3 className="text-lg font-heading font-bold text-foreground mb-2">
-                    {t.title}
-                  </h3>
-                  <p className="font-body text-foreground/60 text-sm leading-relaxed mb-4">
-                    {t.summary}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {t.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-body font-medium text-gold/80 bg-gold/10 px-2.5 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openIndex === i ? "max-h-40 mt-3 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="font-body text-sm text-surface-foreground/70 leading-relaxed">{t.desc}</p>
                 </div>
-              </div>
+              </button>
             </ScrollReveal>
           ))}
         </div>
-
-        {/* Conversion CTA mid-page */}
-        <ScrollReveal>
-          <div className="mt-14 text-center">
-            <a
-              href="https://wa.link/izazjx"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-8 py-3.5 rounded-full text-sm font-semibold font-body hover:bg-gold-light transition-all hover:shadow-lg hover:shadow-gold/20"
-            >
-              <MessageCircle className="w-4 h-4" />
-              Agendar avaliação
-            </a>
-          </div>
-        </ScrollReveal>
       </div>
     </section>
   );

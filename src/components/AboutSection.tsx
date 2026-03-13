@@ -1,86 +1,86 @@
-import aboutAlfredo from "@/assets/about-alfredo.jpg";
-import aboutCarlos from "@/assets/about-carlos.jpg";
-import { MessageCircle } from "lucide-react";
+import { Camera, MessageCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-
-const doctors = [
-  {
-    name: "Dr. Alfredo Metzger",
-    image: aboutAlfredo,
-    credential: "CREMERS 39343",
-    specialty: "Ortopedista · Dor e Cuidados Paliativos",
-    bio: "Médico Ortopedista e especialista em Dor, Cuidados Paliativos e Neuromodulação. Combina ciência e empatia em planos terapêuticos individualizados que tratam não apenas a doença, mas o paciente como um todo.",
-    whatsapp: "https://wa.link/izazjx",
-    instagram: "https://www.instagram.com/dr.alfredo.humana.ortopedia/",
-  },
-  {
-    name: "Dr. Carlos Vieira",
-    image: aboutCarlos,
-    credential: "CREMERS 57.754 · RQE 44.416 · RQE 44.392",
-    specialty: "Ortopedista · Intervencionista da Dor",
-    bio: "Médico Intervencionista da Dor com título AMB/SBOT. Da farmácia à medicina, construiu uma trajetória única. Autor de capítulos em livros de referência, membro da SBED e LAPS, reconhecido pela abordagem técnica e humanizada.",
-    whatsapp: "https://wa.me/5551991932662",
-    instagram: "https://www.instagram.com/drcarlosvieira.dor/",
-  },
-];
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 bg-navy-light">
+    <section id="sobre" className="py-20 md:py-28 bg-surface">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <p className="text-center text-xs font-body uppercase tracking-[0.4em] text-gold mb-3">
-            Especialistas
-          </p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-center text-foreground mb-14">
-            Quem cuida de você
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-surface-foreground text-center mb-16">
+            Conheça os especialistas
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {doctors.map((doc, i) => (
-            <ScrollReveal key={doc.name} delay={i * 0.15}>
-              <div className="group bg-background/30 border border-border rounded-2xl overflow-hidden hover:border-gold/30 transition-colors h-full flex flex-col">
-                <div className="h-72 overflow-hidden">
-                  <img
-                    src={doc.image}
-                    alt={doc.name}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-xl font-heading font-bold text-foreground mb-1">
-                    {doc.name}
-                  </h3>
-                  <p className="text-xs font-body text-gold mb-1">{doc.specialty}</p>
-                  <p className="text-[10px] font-body text-foreground/40 mb-4">{doc.credential}</p>
-                  <p className="font-body text-foreground/60 text-sm leading-relaxed mb-5 flex-1">
-                    {doc.bio}
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={doc.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-5 py-2.5 rounded-full text-xs font-semibold font-body hover:bg-gold-light transition-colors"
-                    >
-                      <MessageCircle className="w-3.5 h-3.5" />
-                      Agendar
-                    </a>
-                    <a
-                      href={doc.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs font-body text-gold/70 hover:text-gold transition-colors"
-                    >
-                      @Instagram
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
+        {/* Dr. Alfredo */}
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
+          <ScrollReveal>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center shadow-lg max-w-sm mx-auto w-full">
+              {/* SUBSTITUIR: foto do Dr. Alfredo */}
+              <Camera className="w-12 h-12 text-surface-foreground/20" />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <div>
+              <span className="inline-block border border-gold/40 text-gold text-xs font-body uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                CREMERS 39343
+              </span>
+              <h3 className="font-heading text-2xl md:text-3xl font-bold text-surface-foreground mb-1">
+                Dr. Alfredo Renato Metzger Filho
+              </h3>
+              <p className="font-body text-sm text-gold mb-4">
+                Ortopedista | Especialista em Dor e Cuidados Paliativos
+              </p>
+              <p className="font-body text-surface-foreground/70 leading-relaxed mb-6">
+                Médico ortopedista, professor de medicina e especialista em Dor e Cuidados Paliativos pelo HCPA/UFRGS. Residência em Ortopedia e Traumatologia pelo Hospital Universitário de Canoas (ULBRA). Atua com infiltrações articulares guiadas por imagem, neuromodulação com tDCS e prescrição de canabinóides, sempre com foco no cuidado humano e na qualidade de vida.
+              </p>
+              <a
+                href="https://wa.me/5551920004467"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Agendar com Dr. Alfredo
+              </a>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        <div className="h-px bg-gold/15 max-w-2xl mx-auto mb-16" />
+
+        {/* Dr. Carlos */}
+        <div className="grid md:grid-cols-2 gap-10 items-center">
+          <ScrollReveal delay={0.15} className="md:order-2">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center shadow-lg max-w-sm mx-auto w-full">
+              {/* SUBSTITUIR: foto do Dr. Carlos */}
+              <Camera className="w-12 h-12 text-surface-foreground/20" />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal className="md:order-1">
+            <div>
+              <span className="inline-block border border-gold/40 text-gold text-xs font-body uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+                CREMERS 57.754 | RQE 44.416 | RQE 44.392
+              </span>
+              <h3 className="font-heading text-2xl md:text-3xl font-bold text-surface-foreground mb-1">
+                Dr. Carlos Eduardo Gomes Vieira
+              </h3>
+              <p className="font-body text-sm text-gold mb-4">
+                Médico Intervencionista da Dor | Ortopedista
+              </p>
+              <p className="font-body text-surface-foreground/70 leading-relaxed mb-6">
+                Especialista em Medicina Intervencionista da Dor com título AMB/SBOT em Atuação em Dor. Membro da SBED e da LAPS. Diretor de Comitês da SBED. Autor de capítulos de livros em medicina da dor. Destaca-se por procedimentos minimamente invasivos como radiofrequência, neurocrioablação e bloqueios guiados por imagem, com abordagem técnica, empática e orientada ao resultado.
+              </p>
+              <a
+                href="https://wa.me/5551991932662"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                Agendar com Dr. Carlos
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
