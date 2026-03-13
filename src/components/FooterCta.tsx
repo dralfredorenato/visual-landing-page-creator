@@ -22,7 +22,7 @@ const FooterCta = () => {
             Dr. Alfredo — WhatsApp
           </a>
           <a
-            href="https://wa.link/s4200f"
+            href="https://wa.me/5551991932662"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-7 py-3 rounded-full text-sm font-semibold font-body hover:bg-gold-light transition-colors"
@@ -54,7 +54,7 @@ const FooterCta = () => {
             </a>
           </div>
           <p className="text-xs font-body text-foreground/30">
-            © 2025 Humana Ortopedia — Dr. Alfredo Metzger · Dr. Carlos Vieira
+            © 2025 Humana Ortopedia — Dr. Alfredo Metzger · Dr. Carlos Eduardo Gomes Vieira
           </p>
         </div>
       </div>

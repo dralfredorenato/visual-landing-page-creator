@@ -29,12 +29,15 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 pt-24">
         <div className="max-w-2xl">
+          <p className="text-sm font-body uppercase tracking-[0.3em] text-gold mb-4">
+            Medicina da Dor & Saúde Óssea
+          </p>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight text-foreground mb-6">
-            Ortopedia Especializada no Tratamento da Dor e Qualidade de Vida
+            Da dor à reabilitação: sua jornada começa aqui.
           </h1>
 
           <p className="text-base md:text-lg font-body text-foreground/75 mb-8 leading-relaxed max-w-xl">
-            A Humana Ortopedia reúne dois especialistas dedicados ao cuidado integral da dor crônica, saúde óssea e limitações articulares — com técnicas modernas, minimamente invasivas e atendimento humanizado.
+            Com acolhimento e técnicas avançadas, cuidamos de você no controle e alívio da sua dor. Porque viver com dor não é normal.
           </p>
 
           <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -51,10 +54,10 @@ const HeroSection = () => {
             </div>
             <div className="bg-background/40 backdrop-blur-sm border border-border rounded-lg p-4">
               <p className="text-sm font-body font-semibold text-gold">
-                Dr. Carlos Vieira
+                Dr. Carlos Eduardo Vieira
               </p>
               <p className="text-xs font-body text-foreground/55 mt-1">
-                CREMERS 57.754 · RQE 44.416
+                CREMERS 57.754 · RQE 44.416 · RQE 44.392
               </p>
               <p className="text-xs font-body text-foreground/55">
                 Ortopedista · Intervencionista da Dor
@@ -66,15 +69,26 @@ const HeroSection = () => {
             Atendimentos em <span className="font-semibold text-foreground/80">Porto Alegre/RS</span>
           </p>
 
-          <a
-            href="https://wa.link/izazjx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-8 py-3.5 rounded-full text-base font-semibold font-body hover:bg-gold-light transition-colors"
-          >
-            <MessageCircle className="w-5 h-5" />
-            Fale por WhatsApp
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://wa.link/izazjx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-8 py-3.5 rounded-full text-base font-semibold font-body hover:bg-gold-light transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Humana Ortopedia
+            </a>
+            <a
+              href="https://wa.me/5551991932662"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-gold/50 text-gold px-8 py-3.5 rounded-full text-base font-semibold font-body hover:bg-gold/10 transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" />
+              Dr. Carlos Vieira
+            </a>
+          </div>
         </div>
       </div>
     </section>
