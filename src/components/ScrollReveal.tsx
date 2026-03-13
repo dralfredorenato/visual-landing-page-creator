@@ -22,7 +22,7 @@ const ScrollReveal = ({ children, className = "", delay = 0, direction = "up" }:
       transition: {
         duration: 0.7,
         delay,
-        ease: [0.25, 0.4, 0.25, 1],
+        ease: [0.25, 0.4, 0.25, 1] as [number, number, number, number],
       },
     },
   };
