@@ -32,7 +32,7 @@ const AboutSection = () => {
                 Ortopedista · Especialista em Dor e Cuidados Paliativos
               </p>
               <p className="font-body text-surface-foreground/70 leading-relaxed mb-6" style={{ textWrap: "pretty" }}>
-                Médico ortopedista, professor de medicina e especialista em Dor e Cuidados Paliativos pelo HCPA/UFRGS. Residência em Ortopedia e Traumatologia pelo Hospital Universitário de Canoas (ULBRA). Atua com infiltrações articulares guiadas por imagem, neuromodulação com tDCS e prescrição de canabinóides, sempre com foco no cuidado humano e na qualidade de vida.
+                Médico formado pela Universidade Federal de Pelotas (UFPel). Residência em Ortopedia e Traumatologia pelo Hospital Universitário de Canoas (ULBRA). Pós-graduando em Dor e Medicina Paliativa pelo Hospital de Clínicas de Porto Alegre (HCPA/UFRGS) e em Perícia Médica pela Faculdade Unimed. Atua no cuidado de pacientes com doenças musculoesqueléticas e dor, com foco em avaliação clínica criteriosa, manejo da dor e melhoria da qualidade de vida.
               </p>
               <a
                 href="https://wa.me/5551920004467"
