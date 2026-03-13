@@ -1,5 +1,7 @@
-import { Camera, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import aboutAlfredo from "@/assets/about-alfredo.jpg";
+import aboutCarlos from "@/assets/about-carlos.jpg";
 
 const AboutSection = () => {
   return (
@@ -14,9 +16,8 @@ const AboutSection = () => {
         {/* Dr. Alfredo */}
         <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
           <ScrollReveal>
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center shadow-lg max-w-sm mx-auto w-full">
-              {/* SUBSTITUIR: foto do Dr. Alfredo */}
-              <Camera className="w-12 h-12 text-surface-foreground/20" />
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto w-full">
+              <img src={aboutAlfredo} alt="Dr. Alfredo Renato Metzger Filho" className="w-full h-full object-cover" />
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
@@ -51,9 +52,8 @@ const AboutSection = () => {
         {/* Dr. Carlos */}
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <ScrollReveal delay={0.15} className="md:order-2">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-surface-foreground/5 to-surface-foreground/10 flex items-center justify-center shadow-lg max-w-sm mx-auto w-full">
-              {/* SUBSTITUIR: foto do Dr. Carlos */}
-              <Camera className="w-12 h-12 text-surface-foreground/20" />
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto w-full">
+              <img src={aboutCarlos} alt="Dr. Carlos Eduardo Gomes Vieira" className="w-full h-full object-cover" />
             </div>
           </ScrollReveal>
           <ScrollReveal className="md:order-1">
