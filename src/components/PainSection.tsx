@@ -39,8 +39,8 @@ const PainSection = () => {
           </div>
 
           <ScrollReveal delay={0.15}>
-            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
-              <img src={aboutClinica} alt="Clínica Humana Ortopedia" className="w-full h-full object-cover" />
+            <div className="aspect-[4/5] md:aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
+              <img src={aboutClinica} alt="Clínica Humana Ortopedia" className="w-full h-full object-cover object-top" />
             </div>
           </ScrollReveal>
         </div>
