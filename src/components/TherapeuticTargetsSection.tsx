@@ -15,9 +15,9 @@ const TherapeuticTargetsSection = () => {
     <section id="alvos" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <ScrollReveal>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-3">
-            Onde tratamos
-          </h2>
+           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-3">
+              Nossos alvos terapêuticos
+           </h2>
           <p className="text-center text-muted-foreground font-body mb-14 max-w-xl mx-auto">
             Abordagem especializada para cada região do corpo
           </p>
@@ -25,13 +25,13 @@ const TherapeuticTargetsSection = () => {
 
         <div className="flex gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible scrollbar-hide">
           {targets.map((t, i) => (
-            <ScrollReveal key={t.title} delay={i * 0.07}>
-              <div className="min-w-[220px] md:min-w-0 border border-gold/20 rounded-xl bg-card p-6 hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group">
+            <ScrollReveal key={t.title} delay={i * 0.07} className="flex">
+              <div className="min-w-[200px] md:min-w-0 flex-1 border border-gold/20 rounded-xl bg-card p-6 hover:border-gold/50 hover:-translate-y-1 transition-all duration-300 group flex flex-col">
                 <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
                   <div className="w-3 h-3 rounded-full bg-gold/60" />
                 </div>
                 <h3 className="font-heading text-lg font-bold text-foreground mb-2">{t.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed flex-1">{t.desc}</p>
               </div>
             </ScrollReveal>
           ))}
