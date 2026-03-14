@@ -23,7 +23,7 @@ const AboutSection = () => {
           <ScrollReveal delay={0.15}>
             <div>
               <span className="inline-block border border-gold/40 text-gold text-xs font-body uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-                CREMERS 39343
+                CREMERS 39.344 · RQE 44.522
               </span>
               <h3 className="font-heading text-2xl md:text-3xl font-bold text-surface-foreground mb-1">
                 Dr. Alfredo Renato Metzger Filho
