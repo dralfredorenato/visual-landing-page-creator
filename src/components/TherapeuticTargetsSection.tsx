@@ -8,6 +8,7 @@ const targets = [
   { title: "Quadris", desc: "Coxartrose, inflamações periarticulares, síndromes musculares" },
   { title: "Joelhos", desc: "Gonartrose, lesões ligamentares e meniscais, traumas esportivos" },
   { title: "Tornozelos e Pés", desc: "Fascite plantar, entorses, inflamações tendíneas" },
+  { title: "Dores Crônicas", desc: "Fibromialgia, dor neuropática, síndromes miofasciais e dor crônica generalizada" },
 ];
 
 const TherapeuticTargetsSection = () => {
