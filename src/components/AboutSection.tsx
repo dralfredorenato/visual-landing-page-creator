@@ -71,7 +71,7 @@ const AboutSection = () => {
                 Especialista em Medicina Intervencionista da Dor com título AMB/SBOT em Atuação em Dor. Membro da SBED e da LAPS. Diretor de Comitês da SBED. Autor de capítulos de livros em medicina da dor. Destaca-se por procedimentos minimamente invasivos como radiofrequência, neurocrioablação e bloqueios guiados por imagem, com abordagem técnica, empática e orientada ao resultado.
               </p>
               <a
-                href="https://wa.me/5551991932662"
+                href="https://wa.me/5551920004467"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
