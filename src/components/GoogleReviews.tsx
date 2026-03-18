@@ -136,7 +136,7 @@ const GoogleReviews = () => {
             <span className="font-semibold text-surface-foreground">5.0</span>
             <span>|</span>
             <a
-              href="https://www.google.com/maps/place/MedPlex+Santana/@-30.02,-51.19,17z/"
+              href="https://www.google.com/search?kgmid=/g/11yy0ghf8s&q=Humana+Ortopedia+e+Sa%C3%BAde+Ltda&shndl=30&shem=shrtsdl"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gold hover:underline inline-flex items-center gap-1"
