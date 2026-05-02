@@ -81,6 +81,7 @@ const Privacidade = () => {
                 <li><strong>Dados de identificação:</strong> nome completo, CPF (quando aplicável) e data de nascimento.</li>
                 <li><strong>Dados de contato:</strong> endereço, telefone, WhatsApp e e-mail.</li>
                 <li><strong>Dados de mensagens:</strong> conteúdo das mensagens enviadas por formulários, WhatsApp ou e-mail.</li>
+                <li><strong>Dados de responsáveis legais:</strong> informações de pais, tutores ou curadores, no caso de menores de idade ou pacientes sob curatela.</li>
                 <li><strong>Dados de navegação:</strong> endereço IP, tipo de dispositivo, páginas visitadas e cookies, coletados via Google Tag Manager para fins estatísticos e de melhoria do site.</li>
               </ul>
             </section>
