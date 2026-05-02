@@ -23,6 +23,7 @@ const Footer = () => {
                 { label: "Sobre", href: "/#sobre" },
                 { label: "Blog", href: "/blog" },
                 { label: "Contato", href: "/#contato" },
+                { label: "Política de Privacidade", href: "/privacidade" },
               ].map((link) =>
                 link.href.startsWith("/") && !link.href.startsWith("/#") ? (
                   <Link key={link.href} to={link.href} className="block font-body text-sm text-muted-foreground hover:text-gold transition-colors">
