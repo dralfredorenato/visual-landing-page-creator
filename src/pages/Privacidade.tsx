@@ -57,8 +57,16 @@ const Privacidade = () => {
               <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
                 1. Identificação da controladora
               </h2>
+              <p className="mb-3">
+                A clínica Humana Ortopedia opera por meio das seguintes pessoas
+                jurídicas, ambas controladoras dos dados pessoais tratados no
+                âmbito de suas respectivas atividades:
+              </p>
+              <ul className="space-y-1.5 list-disc pl-5 mb-4">
+                <li><strong>Humana Ortopedia Ltda.</strong> — CNPJ 62.249.569/0001-42</li>
+                <li><strong>Humana Ortopedia e Saúde Ltda.</strong> — CNPJ 64.343.199/0001-33</li>
+              </ul>
               <ul className="space-y-1.5 list-disc pl-5">
-                <li><strong>Razão social:</strong> Humana Ortopedia e Saúde Ltda.</li>
                 <li><strong>Endereço:</strong> Rua Gomes Jardim, 201 — sala 505A — MedPlex Santana — Porto Alegre/RS — CEP 90620-130</li>
                 <li>
                   <strong>Médicos responsáveis:</strong> Dr. Alfredo Metzger
@@ -169,7 +177,72 @@ const Privacidade = () => {
 
             <section>
               <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
-                9. Encarregado pelo tratamento de dados
+                9. Prazos de retenção
+              </h2>
+              <ul className="space-y-1.5 list-disc pl-5">
+                <li><strong>Prontuários médicos:</strong> mantidos pelo prazo mínimo de 20 anos a contar do último registro, conforme a Resolução CFM nº 1.821/2007.</li>
+                <li><strong>Documentos fiscais:</strong> conservados pelos prazos exigidos pela legislação tributária (em regra, 5 anos).</li>
+                <li><strong>Logs de acesso ao site:</strong> armazenados pelo prazo mínimo de 6 meses, conforme art. 15 da Lei nº 12.965/2014 (Marco Civil da Internet).</li>
+                <li><strong>Dados tratados com base em consentimento:</strong> mantidos até a revogação pelo titular, observados os prazos legais mínimos aplicáveis.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                10. Transferência internacional de dados
+              </h2>
+              <p>
+                Operadores utilizados pela Humana Ortopedia — como Google e Meta —
+                podem armazenar e processar dados em servidores localizados fora do
+                território brasileiro. Nesses casos, adotamos as salvaguardas
+                previstas no art. 33 da LGPD para assegurar grau de proteção de
+                dados adequado ao previsto na legislação brasileira.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                11. Sigilo médico
+              </h2>
+              <p>
+                Todos os dados clínicos coletados estão protegidos pelo{" "}
+                <strong>sigilo médico</strong>, dever ético e legal previsto no
+                Código de Ética Médica e na legislação brasileira. Médicos,
+                profissionais de saúde e colaboradores envolvidos no atendimento
+                estão sujeitos a obrigações de confidencialidade, ainda que após o
+                término do vínculo profissional.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                12. Crianças e adolescentes
+              </h2>
+              <p>
+                O atendimento de pacientes menores de 18 anos é realizado
+                exclusivamente mediante autorização e presença de responsável
+                legal. Os dados pessoais de crianças e adolescentes são tratados
+                com proteção reforçada, em conformidade com o art. 14 da LGPD e
+                com o Estatuto da Criança e do Adolescente (Lei nº 8.069/1990),
+                sempre observando o melhor interesse do menor.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                13. Comunicação de incidentes
+              </h2>
+              <p>
+                Em caso de incidente de segurança que possa acarretar risco ou
+                dano relevante aos titulares, a Humana Ortopedia comunicará o fato
+                ao titular afetado e à Autoridade Nacional de Proteção de Dados
+                (ANPD), em prazo razoável, conforme o art. 48 da LGPD.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                14. Encarregado pelo tratamento de dados
               </h2>
               <p>
                 A Humana Ortopedia não possui encarregado (DPO) específico para
@@ -183,7 +256,20 @@ const Privacidade = () => {
 
             <section>
               <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
-                10. Alterações desta Política
+                15. Legislação aplicável e foro
+              </h2>
+              <p>
+                Esta Política de Privacidade é regida pela legislação brasileira,
+                em especial pela Lei nº 13.709/2018 (LGPD). Fica eleito o foro da
+                Comarca de Porto Alegre/RS para dirimir quaisquer controvérsias
+                decorrentes deste documento, sem prejuízo de eventual foro
+                privilegiado previsto em lei.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                16. Alterações desta Política
               </h2>
               <p>
                 Esta Política pode ser atualizada periodicamente. A versão vigente
