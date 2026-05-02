@@ -74,15 +74,13 @@ const Privacidade = () => {
                 2. Dados coletados
               </h2>
               <p className="mb-3">
-                Coletamos apenas os dados pessoais necessários para as finalidades
-                descritas nesta Política. Os dados podem incluir:
+                Coletamos apenas os dados necessários para responder a contatos,
+                agendar consultas e cumprir obrigações legais:
               </p>
               <ul className="space-y-1.5 list-disc pl-5">
-                <li><strong>Dados de identificação:</strong> nome completo, CPF (quando aplicável) e data de nascimento.</li>
-                <li><strong>Dados de contato:</strong> endereço, telefone, WhatsApp e e-mail.</li>
-                <li><strong>Dados de mensagens:</strong> conteúdo das mensagens enviadas por formulários, WhatsApp ou e-mail.</li>
-                <li><strong>Dados de responsáveis legais:</strong> informações de pais, tutores ou curadores, no caso de menores de idade ou pacientes sob curatela.</li>
-                <li><strong>Dados de navegação:</strong> endereço IP, identificadores de dispositivo, tipo de navegador, sistema operacional, páginas visitadas, tempo de permanência, origem do acesso (referrer), termos de busca, dados de localização aproximada (derivados do IP) e cookies, coletados via Google Tag Manager para fins estatísticos e de melhoria do site.</li>
+                <li><strong>Dados de identificação:</strong> nome, e-mail e telefone informados em formulário de contato.</li>
+                <li><strong>Dados de mensagens:</strong> conteúdo enviado por meio de formulários ou WhatsApp.</li>
+                <li><strong>Dados de navegação:</strong> endereço IP, tipo de dispositivo, páginas visitadas e cookies, coletados via Google Tag Manager para fins estatísticos e de melhoria do site.</li>
               </ul>
             </section>
 
