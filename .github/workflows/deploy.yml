@@ -76,7 +76,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /public_html/
+          server-dir: ./
           dangerous-clean-slate: false
           exclude: |
             **/.git*
@@ -85,6 +85,7 @@ jobs:
             staging/**
             wp/**
             blog/**
+            public_html/**
             wp-admin/**
             wp-includes/**
             wp-content/**
