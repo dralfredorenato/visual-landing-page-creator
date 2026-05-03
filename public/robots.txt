@@ -1,3 +1,16 @@
+# Humana Ortopedia - robots.txt
 User-agent: *
 Allow: /
-Sitemap: https://www.humanaortopedia.com.br/sitemap.xml
+
+# Disallow technical/internal paths
+Disallow: /assets/
+Disallow: /blog/wp-admin/
+Disallow: /blog/wp-includes/
+Disallow: /blog/wp-content/plugins/
+Disallow: /blog/wp-content/cache/
+Disallow: /blog/wp-login.php
+Disallow: /blog/xmlrpc.php
+
+# Sitemaps
+Sitemap: https://humanaortopedia.com.br/sitemap.xml
+Sitemap: https://humanaortopedia.com.br/blog/sitemap.xml
