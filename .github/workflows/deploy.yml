@@ -38,6 +38,10 @@ jobs:
           # Do not rewrite WordPress blog
           RewriteRule ^blog/ - [L]
           RewriteRule ^blog$ - [L]
+          RewriteRule ^wp/ - [L]
+          RewriteRule ^wp-admin/ - [L]
+          RewriteRule ^wp-includes/ - [L]
+          RewriteRule ^wp-content/ - [L]
 
           # Do not rewrite real files/dirs
           RewriteCond %{REQUEST_FILENAME} -f [OR]
@@ -65,16 +69,35 @@ jobs:
           </IfModule>
           HTACCESS
 
-      - name: Deploy to HostGator via FTP (staging)
+      - name: Deploy to HostGator via FTP (production)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /staging/
+          server-dir: /public_html/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
             **/.git*/**
             **/node_modules/**
+            staging/**
+            wp/**
+            blog/**
+            wp-admin/**
+            wp-includes/**
+            wp-content/**
+            wp-config.php
+            wp-config-sample.php
+            wp-login.php
+            wp-cron.php
+            wp-blog-header.php
+            wp-load.php
+            wp-mail.php
+            wp-settings.php
+            wp-signup.php
+            wp-trackback.php
+            xmlrpc.php
+            license.txt
+            readme.html
