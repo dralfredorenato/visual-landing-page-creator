@@ -24,7 +24,7 @@
       content="Humana Ortopedia — Dr. Alfredo Metzger e Dr. Carlos Vieira. Ortopedia humanizada e medicina intervencionista da dor com técnicas minimamente invasivas em Porto Alegre/RS."
     />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.humanaortopedia.com.br/" />
+    <link rel="canonical" href="https://humanaortopedia.com.br/" />
 
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="rKD7SR-idgxYj4N2yaJb6qmkBOtmuF4s4tqvf9SnTPM" />
@@ -42,8 +42,8 @@
       content="Ortopedia humanizada e medicina intervencionista da dor em Porto Alegre/RS. Dr. Alfredo Metzger e Dr. Carlos Vieira — MedPlex Santana. Agende sua consulta."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.humanaortopedia.com.br/" />
-    <meta property="og:image" content="https://www.humanaortopedia.com.br/og-image.jpg" />
+    <meta property="og:url" content="https://humanaortopedia.com.br/" />
+    <meta property="og:image" content="https://humanaortopedia.com.br/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="pt_BR" />
@@ -56,19 +56,20 @@
       name="twitter:description"
       content="Ortopedia humanizada e medicina intervencionista da dor em Porto Alegre/RS."
     />
-    <meta name="twitter:image" content="https://www.humanaortopedia.com.br/og-image.jpg" />
+    <meta name="twitter:image" content="https://humanaortopedia.com.br/og-image.jpg" />
 
     <!-- Schema.org — MedicalClinic -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "MedicalClinic",
+        "@id": "https://humanaortopedia.com.br/#clinic",
         "name": "Humana Ortopedia",
         "alternateName": "Humana Ortopedia e Saúde",
         "description": "Ortopedia humanizada e medicina intervencionista da dor com técnicas minimamente invasivas em Porto Alegre/RS.",
-        "url": "https://www.humanaortopedia.com.br",
-        "logo": "https://www.humanaortopedia.com.br/favicon.png",
-        "image": "https://www.humanaortopedia.com.br/og-image.jpg",
+        "url": "https://humanaortopedia.com.br",
+        "logo": "https://humanaortopedia.com.br/favicon.png",
+        "image": "https://humanaortopedia.com.br/og-image.jpg",
         "telephone": "+5551920004467",
         "priceRange": "$$",
         "address": {
@@ -87,26 +88,36 @@
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Monday",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
             "opens": "08:00",
             "closes": "18:00"
           }
         ],
         "medicalSpecialty": ["Orthopedics", "Pain Medicine"],
-        "hasMap": "https://www.google.com/maps/place/Humana+Ortopedia",
+        "hasMap": "https://share.google/88YPe1rUeUWImlNAI",
         "sameAs": [
           "https://www.instagram.com/humana.ortopedia/",
-          "https://www.humanaortopedia.com"
+          "https://share.google/88YPe1rUeUWImlNAI"
+        ],
+        "availableService": [
+          { "@type": "MedicalProcedure", "name": "Consulta ortopédica" },
+          { "@type": "MedicalProcedure", "name": "Bloqueios e infiltrações guiados por imagem" },
+          { "@type": "MedicalProcedure", "name": "Tratamento de dor crônica (medicina intervencionista)" },
+          { "@type": "MedicalProcedure", "name": "Viscossuplementação articular" },
+          { "@type": "MedicalProcedure", "name": "Ablação por radiofrequência" },
+          { "@type": "MedicalProcedure", "name": "Ortopedia esportiva" }
         ],
         "employee": [
           {
             "@type": "Physician",
+            "@id": "https://humanaortopedia.com.br/#dr-alfredo",
             "name": "Dr. Alfredo Renato Metzger Filho",
             "medicalSpecialty": "Orthopedics",
             "identifier": "CREMERS 39344"
           },
           {
             "@type": "Physician",
+            "@id": "https://humanaortopedia.com.br/#dr-carlos",
             "name": "Dr. Carlos Eduardo Gomes Vieira",
             "medicalSpecialty": "Pain Medicine",
             "identifier": "CREMERS 57754"
