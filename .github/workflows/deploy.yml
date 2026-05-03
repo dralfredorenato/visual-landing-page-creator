@@ -17,44 +17,53 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: '20'
-          cache: 'npm'
+          bun-version: latest
 
       - name: Install dependencies
-        run: npm ci
+        run: bun install --frozen-lockfile
 
       - name: Build site
-        run: npm run build
+        run: bun run build
 
       - name: Add SPA fallback (.htaccess)
         run: |
-          cat > dist/.htaccess <<'EOF'
-          <IfModule mod_rewrite.c>
-            RewriteEngine On
-            RewriteBase /
-            RewriteCond %{REQUEST_FILENAME} -f [OR]
-            RewriteCond %{REQUEST_FILENAME} -d
-            RewriteRule ^ - [L]
-            RewriteRule ^blog(/.*)?$ - [L]
-            RewriteRule ^ index.html [L]
-          </IfModule>
+          cat > dist/.htaccess <<'HTACCESS'
+          # Humana Ortopedia - SPA + WordPress hybrid
+          Options -MultiViews
+          RewriteEngine On
+
+          # Do not rewrite WordPress blog
+          RewriteRule ^blog/ - [L]
+          RewriteRule ^blog$ - [L]
+
+          # Do not rewrite real files/dirs
+          RewriteCond %{REQUEST_FILENAME} -f [OR]
+          RewriteCond %{REQUEST_FILENAME} -d
+          RewriteRule ^ - [L]
+
+          # SPA fallback
+          RewriteRule ^ index.html [L]
+
+          # Gzip
           <IfModule mod_deflate.c>
-            AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+            AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
           </IfModule>
+
+          # Cache static assets
           <IfModule mod_expires.c>
             ExpiresActive On
             ExpiresByType image/jpeg "access plus 1 year"
             ExpiresByType image/png "access plus 1 year"
-            ExpiresByType image/webp "access plus 1 year"
             ExpiresByType image/svg+xml "access plus 1 year"
+            ExpiresByType image/webp "access plus 1 year"
             ExpiresByType text/css "access plus 1 month"
             ExpiresByType application/javascript "access plus 1 month"
-            ExpiresByType text/html "access plus 0 seconds"
+            ExpiresByType font/woff2 "access plus 1 year"
           </IfModule>
-          EOF
+          HTACCESS
 
       - name: Deploy to HostGator via FTP (staging)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -62,10 +71,8 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: 21
-          protocol: ftp
           local-dir: ./dist/
-          server-dir: /public_html/staging/
+          server-dir: /staging/
           dangerous-clean-slate: false
           exclude: |
             **/.git*
