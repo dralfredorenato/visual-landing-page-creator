@@ -74,7 +74,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.8 }}
         >
-          <span>Dr. Alfredo Metzger · CREMERS 39.344 · RQE 44.522</span>
+          <span>Dr. Alfredo Metzger · CREMERS 39.343 · RQE 44.522</span>
           <span className="hidden md:inline text-border">·</span>
           <span>Dr. Carlos Vieira · CREMERS 57.754 · RQE 44.416 · RQE 44.392</span>
           <span className="hidden md:inline text-border">·</span>
