@@ -70,7 +70,7 @@ const Privacidade = () => {
                 <li><strong>Endereço:</strong> Rua Gomes Jardim, 201 — sala 505A — MedPlex Santana — Porto Alegre/RS — CEP 90620-130</li>
                 <li>
                   <strong>Médicos responsáveis:</strong> Dr. Alfredo Metzger
-                  (CREMERS 39.344 · RQE 44.522) e Dr. Carlos Vieira
+                  (CREMERS 39.343 · RQE 44.522) e Dr. Carlos Vieira
                   (CREMERS 57.754 · RQE 44.416 · RQE 44.392)
                 </li>
                 <li><strong>Contato:</strong> WhatsApp +55 51 92000-4467</li>
