@@ -8,4 +8,4 @@ Disallow: /blog/wp-login.php
 Disallow: /blog/xmlrpc.php
 
 Sitemap: https://humanaortopedia.com.br/sitemap.xml
-Sitemap: https://humanaortopedia.com.br/blog/wp-sitemap.xml
+Sitemap: https://humanaortopedia.com.br/blog/sitemaps.xml
