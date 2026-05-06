@@ -2,12 +2,18 @@ import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
-const navLinks = [
-  { label: "Tratamentos", href: "/#tratamentos" },
-  { label: "Sobre", href: "/#sobre" },
-  { label: "Depoimentos", href: "/#depoimentos" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contato", href: "/#contato" },
+type NavLink = {
+  label: string;
+  href: string;
+  type: "anchor" | "spa" | "external";
+};
+
+const navLinks: NavLink[] = [
+  { label: "Tratamentos", href: "/#tratamentos", type: "anchor" },
+  { label: "Sobre", href: "/#sobre", type: "anchor" },
+  { label: "Depoimentos", href: "/#depoimentos", type: "anchor" },
+  { label: "Blog", href: "https://humanaortopedia.com.br/blog/", type: "external" },
+  { label: "Contato", href: "/#contato", type: "anchor" },
 ];
 
 const Navbar = () => {
@@ -21,15 +27,57 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleAnchorClick = (href: string) => {
     setOpen(false);
-    if (href.startsWith("/#")) {
-      if (location.pathname === "/") {
-        const el = document.querySelector(href.replace("/", ""));
-        el?.scrollIntoView({ behavior: "smooth" });
-      }
+    if (location.pathname === "/") {
+      const el = document.querySelector(href.replace("/", ""));
+      el?.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const renderLink = (link: NavLink, className: string, onClickExtra?: () => void) => {
+    if (link.type === "spa") {
+      return (
+        <Link
+          key={link.href}
+          to={link.href}
+          onClick={onClickExtra}
+          className={className}
+        >
+          {link.label}
+        </Link>
+      );
+    }
+    if (link.type === "external") {
+      return (
+        <a
+          key={link.href}
+          href={link.href}
+          onClick={onClickExtra}
+          className={className}
+        >
+          {link.label}
+        </a>
+      );
+    }
+    // anchor
+    return (
+      <a
+        key={link.href}
+        href={link.href}
+        onClick={() => {
+          handleAnchorClick(link.href);
+          onClickExtra?.();
+        }}
+        className={className}
+      >
+        {link.label}
+      </a>
+    );
+  };
+
+  const desktopLinkClass = "text-xs font-body font-medium text-foreground/70 hover:text-gold transition-colors tracking-widest uppercase";
+  const mobileLinkClass = "py-4 text-lg font-body font-medium text-foreground/80 hover:text-gold transition-colors uppercase tracking-wide border-b border-border/30";
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"}`}>
@@ -39,26 +87,7 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) =>
-            link.href.startsWith("/") && !link.href.startsWith("/#") ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-xs font-body font-medium text-foreground/70 hover:text-gold transition-colors tracking-widest uppercase"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="text-xs font-body font-medium text-foreground/70 hover:text-gold transition-colors tracking-widest uppercase"
-              >
-                {link.label}
-              </a>
-            )
-          )}
+          {navLinks.map((link) => renderLink(link, desktopLinkClass))}
         </div>
 
         <a
@@ -79,27 +108,7 @@ const Navbar = () => {
       {/* Mobile drawer */}
       <div className={`md:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-md transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex flex-col p-6 gap-1">
-          {navLinks.map((link) =>
-            link.href.startsWith("/") && !link.href.startsWith("/#") ? (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setOpen(false)}
-                className="py-4 text-lg font-body font-medium text-foreground/80 hover:text-gold transition-colors uppercase tracking-wide border-b border-border/30"
-              >
-                {link.label}
-              </Link>
-            ) : (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="py-4 text-lg font-body font-medium text-foreground/80 hover:text-gold transition-colors uppercase tracking-wide border-b border-border/30"
-              >
-                {link.label}
-              </a>
-            )
-          )}
+          {navLinks.map((link) => renderLink(link, mobileLinkClass, () => setOpen(false)))}
           <a
             href="https://wa.me/5551920004467"
             target="_blank"
