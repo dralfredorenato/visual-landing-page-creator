@@ -29,7 +29,7 @@ const AboutSection = () => {
                 Dr. Alfredo Renato Metzger Filho
               </h3>
               <p className="font-body text-sm text-gold mb-4">
-                Ortopedista · Especialista em Dor e Cuidados Paliativos
+                Ortopedista e Traumatologista · Atuação em dor e intervenção em dor
               </p>
               <p className="font-body text-surface-foreground/70 leading-relaxed mb-6" style={{ textWrap: "pretty" }}>
                 Médico formado pela Universidade Federal de Pelotas (UFPel). Residência em Ortopedia e Traumatologia pelo Hospital Universitário de Canoas (ULBRA). Pós-graduando em Dor e Medicina Paliativa pelo Hospital de Clínicas de Porto Alegre (HCPA/UFRGS) e em Perícia Médica pela Faculdade Unimed. Atua no cuidado de pacientes com doenças musculoesqueléticas e dor, com foco em avaliação clínica criteriosa, manejo da dor e melhoria da qualidade de vida.
@@ -65,7 +65,7 @@ const AboutSection = () => {
                 Dr. Carlos Eduardo Gomes Vieira
               </h3>
               <p className="font-body text-sm text-gold mb-4">
-                Médico Intervencionista da Dor · Ortopedista
+                Ortopedista e Traumatologista · Especialista em dor e intervenção em dor
               </p>
               <p className="font-body text-surface-foreground/70 leading-relaxed mb-6" style={{ textWrap: "pretty" }}>
                 Especialista em Medicina Intervencionista da Dor com título AMB/SBOT em Atuação em Dor. Membro da SBED e da LAPS. Diretor de Comitês da SBED. Autor de capítulos de livros em medicina da dor. Destaca-se por procedimentos minimamente invasivos como radiofrequência, neurocrioablação e bloqueios guiados por imagem, com abordagem técnica, empática e orientada ao resultado.
