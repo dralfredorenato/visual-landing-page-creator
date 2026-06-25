@@ -36,7 +36,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex gap-3 items-center">
                   <Clock className="w-5 h-5 text-gold shrink-0" />
-                  <span className="font-body text-sm text-muted-foreground">Atendimentos às segundas-feiras</span>
+                  <span className="font-body text-sm text-muted-foreground">Horários disponíveis durante a semana</span>
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
