@@ -1,7 +1,13 @@
-import { Users, Heart, Zap, Home, BookOpen, Cpu } from "lucide-react";
+import { Users, Heart, Zap, Home, BookOpen, Cpu, type LucideIcon } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 
-const items = [
+export interface DifferentialItem {
+  icon: LucideIcon;
+  title: string;
+  desc: string;
+}
+
+const defaultItems: DifferentialItem[] = [
   { icon: Users, title: "Dois especialistas, uma visão", desc: "Ortopedia e medicina intervencionista da dor integradas sob o mesmo teto." },
   { icon: Heart, title: "Escuta real, sem pressa", desc: "Consultas com tempo dedicado para entender sua história — não apenas o exame." },
   { icon: Zap, title: "Procedimentos minimamente invasivos", desc: "Radiofrequência, bloqueios guiados por imagem, infiltrações com ultrassom — precisão e segurança." },
@@ -10,13 +16,26 @@ const items = [
   { icon: Cpu, title: "Tecnologia a serviço do humano", desc: "tDCS, canabinóides, ondas de choque — inovação ética e individualizada." },
 ];
 
-const DifferentialsSection = () => {
+interface DifferentialsSectionProps {
+  /** Título da seção. Default mantém o texto usado na home. */
+  title?: string;
+  /** Cards exibidos. Default mantém os 6 diferenciais da home. */
+  items?: DifferentialItem[];
+  /** id da âncora. Default "diferenciais" (usado na navegação da home). */
+  id?: string;
+}
+
+const DifferentialsSection = ({
+  title = "Por que a Humana Ortopedia?",
+  items = defaultItems,
+  id = "diferenciais",
+}: DifferentialsSectionProps = {}) => {
   return (
-    <section id="diferenciais" className="py-20 md:py-28 bg-background">
+    <section id={id} className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground text-center mb-14" style={{ textWrap: "balance" }}>
-            Por que a Humana Ortopedia?
+            {title}
           </h2>
         </ScrollReveal>
 
