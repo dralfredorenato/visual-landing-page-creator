@@ -1,9 +1,18 @@
 import { MessageCircle } from "lucide-react";
 
-const FloatingWhatsApp = () => {
+interface FloatingWhatsAppProps {
+  /**
+   * URL de destino do botão flutuante. Default mantém exatamente o link usado
+   * na home (sem mensagem pré-preenchida); páginas de campanha podem passar uma
+   * URL com `?text=` para herdar a mensagem pré-preenchida do anúncio.
+   */
+  href?: string;
+}
+
+const FloatingWhatsApp = ({ href = "https://wa.me/5551920004467" }: FloatingWhatsAppProps = {}) => {
   return (
     <a
-      href="https://wa.me/5551920004467"
+      href={href}
       target="_blank"
       rel="noopener noreferrer"
       title="Falar com a Humana Ortopedia"
