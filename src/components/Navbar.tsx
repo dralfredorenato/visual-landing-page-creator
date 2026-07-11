@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 type NavLink = {
   label: string;
@@ -94,6 +95,7 @@ const Navbar = () => {
           href="https://wa.me/5551920004467"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackWhatsAppConversion}
           className="hidden md:flex items-center gap-2 bg-gold text-primary-foreground px-5 py-2 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
         >
           <MessageCircle className="w-4 h-4" />
@@ -113,6 +115,7 @@ const Navbar = () => {
             href="https://wa.me/5551920004467"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="flex items-center justify-center gap-2 mt-6 bg-gold text-primary-foreground px-5 py-3 rounded-md text-sm font-semibold font-body"
           >
             <MessageCircle className="w-4 h-4" />

@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import logoHumana from "@/assets/logo-humana-branco.png";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 const HeroSection = () => {
   return (
@@ -54,6 +55,7 @@ const HeroSection = () => {
             href="https://wa.me/5551920004467"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="inline-flex items-center justify-center gap-2 bg-gold text-primary-foreground px-7 py-3.5 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-all"
           >
             <MessageCircle className="w-4 h-4" />

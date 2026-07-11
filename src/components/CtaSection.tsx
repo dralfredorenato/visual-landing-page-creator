@@ -1,4 +1,5 @@
 import ScrollReveal from "./ScrollReveal";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 const CtaSection = () => {
   return (
@@ -19,6 +20,7 @@ const CtaSection = () => {
             href="https://wa.me/5551920004467"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="inline-flex items-center justify-center bg-background text-gold px-8 py-4 rounded-md text-sm font-semibold font-body hover:bg-background/90 transition-colors"
           >
             Agendar minha consulta agora

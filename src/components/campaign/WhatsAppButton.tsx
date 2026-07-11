@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 /**
  * URL única de conversão da campanha de infiltração de joelho.
@@ -35,6 +36,7 @@ const WhatsAppButton = ({ children, variant = "gold", className }: WhatsAppButto
     href={WHATSAPP_INFILTRACAO_URL}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={trackWhatsAppConversion}
     className={cn(
       "inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md text-sm font-semibold font-body transition-all",
       variantClasses[variant],
