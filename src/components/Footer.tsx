@@ -1,5 +1,6 @@
 import { Instagram, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 type FooterLink = {
   label: string;
@@ -78,6 +79,7 @@ const Footer = () => {
                 href="https://wa.me/5551920004467"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-gold hover:border-gold/40 transition-colors"
                 aria-label="WhatsApp Humana Ortopedia"
               >

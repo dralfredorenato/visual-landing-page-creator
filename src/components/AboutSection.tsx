@@ -2,6 +2,7 @@ import { MessageCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
 import aboutAlfredo from "@/assets/about-alfredo.jpg";
 import aboutCarlos from "@/assets/about-carlos.jpg";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 const AboutSection = () => {
   return (
@@ -38,6 +39,7 @@ const AboutSection = () => {
                 href="https://wa.me/5551920004467"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -74,6 +76,7 @@ const AboutSection = () => {
                 href="https://wa.me/5551920004467"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-6 py-3 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />

@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock, MessageCircle, ExternalLink } from "lucide-react";
 import { useState } from "react";
 import ScrollReveal from "./ScrollReveal";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "", mensagem: "" });
@@ -8,6 +9,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = encodeURIComponent(`Olá! Sou ${form.nome}. ${form.mensagem}`);
+    trackWhatsAppConversion();
     window.open(`https://wa.me/5551920004467?text=${msg}`, "_blank");
   };
 
@@ -44,6 +46,7 @@ const ContactSection = () => {
                   href="https://wa.me/5551920004467"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={trackWhatsAppConversion}
                   className="inline-flex items-center justify-center gap-2 bg-whatsapp text-white px-6 py-3 rounded-md text-sm font-semibold font-body hover:opacity-90 transition-opacity"
                 >
                   <MessageCircle className="w-4 h-4" />

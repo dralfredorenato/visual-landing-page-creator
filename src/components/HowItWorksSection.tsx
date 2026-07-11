@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { trackWhatsAppConversion } from "@/lib/gtag";
 
 const steps = [
   { num: "01", title: "Agendamento", desc: "WhatsApp ou formulário. Confirmação em até 2 horas." },
@@ -42,6 +43,7 @@ const HowItWorksSection = () => {
               href="https://wa.me/5551920004467"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppConversion}
               className="inline-flex items-center gap-2 bg-gold text-primary-foreground px-8 py-4 rounded-md text-sm font-semibold font-body hover:bg-gold-light transition-colors"
             >
               <MessageCircle className="w-4 h-4" />
