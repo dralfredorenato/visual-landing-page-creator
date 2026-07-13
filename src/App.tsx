@@ -5,7 +5,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Privacidade from "./pages/Privacidade.tsx";
-import InfiltracaoJoelho from "./pages/InfiltracaoJoelho.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -19,7 +18,9 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/privacidade" element={<Privacidade />} />
-          <Route path="/infiltracao-joelho" element={<InfiltracaoJoelho />} />
+          {/* /infiltracao-joelho agora é uma página estática em public/infiltracao-joelho/
+              (mesmo padrão das irmãs /dor-na-coluna e /fascite-plantar). O Apache serve
+              a pasta real, então não passa por este roteador. */}
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
