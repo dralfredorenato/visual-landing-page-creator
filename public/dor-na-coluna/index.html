@@ -28,6 +28,23 @@
   })(window,document,'script','dataLayer','GTM-K42CH8J8');</script>
   <!-- Fim do Google Tag Manager -->
 
+  <!-- ============================================================= -->
+  <!-- GOOGLE TAG (gtag.js) - Google Ads AW-17642002434              -->
+  <!-- Replica o MESMO mecanismo da home (index.html da raiz): o     -->
+  <!-- container GTM so tem tags GA4, entao a conversao do Ads e      -->
+  <!-- disparada por este gtag base + o gtag('event','conversion')    -->
+  <!-- no clique do WhatsApp (ver script no fim do <body>).           -->
+  <!-- NAO alterar o ID nem o send_to.                                -->
+  <!-- ============================================================= -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17642002434"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17642002434');
+  </script>
+  <!-- End Google tag (gtag.js) - AW-17642002434 -->
+
   <!-- Tipografia: Cormorant Garamond (titulos) + DM Sans (corpo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -883,7 +900,27 @@
      ============================================================= */
   document.addEventListener('DOMContentLoaded', () => {
     inicializarRevelacoes();
+    inicializarConversaoWhatsApp();
   });
+
+  /* -------------------------------------------------------------
+     Conversao do Google Ads no clique do WhatsApp.
+     Replica exatamente o trackWhatsAppConversion() da home: dispara
+     gtag('event','conversion', {send_to: AW-17642002434/wjImCJLDys4cEIKwrtxB}).
+     Fire-and-forget: sem preventDefault nem redirect, entao o link
+     wa.me abre normalmente (target="_blank"); se o gtag ainda nao
+     carregou, ignora silenciosamente.
+     ------------------------------------------------------------- */
+  function inicializarConversaoWhatsApp() {
+    document.querySelectorAll('.botao-whats').forEach((botao) => {
+      botao.addEventListener('click', () => {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-17642002434/wjImCJLDys4cEIKwrtxB'
+        });
+      });
+    });
+  }
 
   /* -------------------------------------------------------------
      Revela cada elemento .reveal quando ele entra na tela.
