@@ -43,6 +43,13 @@ jobs:
           RewriteRule ^wp-includes/ - [L]
           RewriteRule ^wp-content/ - [L]
 
+          # Redirect 301 permanente: /fascite-plantar (rota antiga, estreita)
+          # foi ampliada para /ondas-de-choque. Vem ANTES do passthrough de
+          # arquivos reais para emitir um 301 de verdade (a pasta ainda existe
+          # como stub de fallback). Nao deixar link morto.
+          RewriteRule ^fascite-plantar/?$ /ondas-de-choque/ [R=301,L]
+          RewriteRule ^fascite-plantar/.+ /ondas-de-choque/ [R=301,L]
+
           # Do not rewrite real files/dirs
           RewriteCond %{REQUEST_FILENAME} -f [OR]
           RewriteCond %{REQUEST_FILENAME} -d
