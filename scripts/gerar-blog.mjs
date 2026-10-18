@@ -20,7 +20,7 @@
    Dr. Carlos = Especialista em Dor. Sem promessa de cura ou resultado.
    ============================================================= */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -459,12 +459,22 @@ function main() {
     process.exit(1);
   }
 
-  // So publica o que tem data de hoje ou anterior (permite deixar post agendado no repo).
-  const hoje = new Date().toISOString().slice(0, 10);
-  const publicados = posts.filter((p) => p.data <= hoje).sort((a, b) => b.data.localeCompare(a.data));
+  // Tudo que esta em posts.json e publicado; a publicacao acontece no merge do PR.
+  // (Nao ha agendamento: o build da Vercel nao roda este script.)
+  const publicados = [...posts].sort((a, b) => b.data.localeCompare(a.data));
 
   const saida = join(RAIZ, "public", "blog");
   mkdirSync(saida, { recursive: true });
+
+  // Remove paginas geradas de posts que sairam de posts.json (renomeados ou apagados).
+  const ativos = new Set(publicados.map((p) => p.slug));
+  for (const item of readdirSync(saida, { withFileTypes: true })) {
+    if (item.isDirectory() && !ativos.has(item.name) && existsSync(join(saida, item.name, "index.html"))) {
+      rmSync(join(saida, item.name), { recursive: true, force: true });
+      console.log(`Removida página antiga: /blog/${item.name}/`);
+    }
+  }
+
   for (const p of publicados) {
     mkdirSync(join(saida, p.slug), { recursive: true });
     writeFileSync(join(saida, p.slug, "index.html"), paginaPost(p, p.corpo));
@@ -473,7 +483,7 @@ function main() {
   writeFileSync(join(saida, "posts.json"), JSON.stringify(publicados.map(({ corpo, descricao, whatsTexto, ctaTitulo, paginaRelacionada, ...resto }) => resto), null, 2) + "\n");
   atualizarSitemap(publicados);
 
-  console.log(`Blog gerado: ${publicados.length} post(s) publicados${posts.length > publicados.length ? `, ${posts.length - publicados.length} agendado(s)` : ""}.`);
+  console.log(`Blog gerado: ${publicados.length} post(s).`);
 }
 
 main();
