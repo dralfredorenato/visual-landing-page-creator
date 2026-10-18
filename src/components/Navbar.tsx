@@ -13,7 +13,7 @@ const navLinks: NavLink[] = [
   { label: "Tratamentos", href: "/#tratamentos", type: "anchor" },
   { label: "Sobre", href: "/#sobre", type: "anchor" },
   { label: "Depoimentos", href: "/#depoimentos", type: "anchor" },
-  { label: "Blog", href: "https://humanaortopedia.com.br/blog/", type: "external" },
+  { label: "Blog", href: "/blog/", type: "external" },
   { label: "Contato", href: "/#contato", type: "anchor" },
 ];
 
