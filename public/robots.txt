@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /blog/wp-admin/
-Disallow: /blog/wp-includes/
-Disallow: /blog/wp-content/plugins/
-Disallow: /blog/wp-content/cache/
-Disallow: /blog/wp-login.php
-Disallow: /blog/xmlrpc.php
 
 Sitemap: https://humanaortopedia.com.br/sitemap.xml
-Sitemap: https://humanaortopedia.com.br/blog/sitemaps.xml
