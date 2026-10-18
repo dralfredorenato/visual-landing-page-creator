@@ -11,7 +11,7 @@ type FooterLink = {
 const footerLinks: FooterLink[] = [
   { label: "Tratamentos", href: "/#tratamentos", type: "anchor" },
   { label: "Sobre", href: "/#sobre", type: "anchor" },
-  { label: "Blog", href: "https://humanaortopedia.com.br/blog/", type: "external" },
+  { label: "Blog", href: "/blog/", type: "external" },
   { label: "Contato", href: "/#contato", type: "anchor" },
   { label: "Doctoralia", href: "https://www.doctoralia.com.br/z/JpU6Ac", type: "external" },
   { label: "Política de Privacidade", href: "/privacidade", type: "spa" },

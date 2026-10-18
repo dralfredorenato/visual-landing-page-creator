@@ -36,4 +36,18 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <!-- BLOG:INICIO (gerado por scripts/gerar-blog.mjs) -->
+  <url>
+    <loc>https://humanaortopedia.com.br/blog/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://humanaortopedia.com.br/blog/dor-no-calcanhar-ao-acordar/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- BLOG:FIM -->
 </urlset>
