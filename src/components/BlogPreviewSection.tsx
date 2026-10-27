@@ -17,7 +17,7 @@ interface PostResumo {
   resumo: string;
   categoria: string;
   data: string; // AAAA-MM-DD
-  autor: string;
+  autor: string | string[]; // um autor ou uma lista, ex.: ["alfredo", "carlos"]
   tempoLeitura: number;
 }
 
@@ -85,7 +85,7 @@ const BlogPreviewSection = () => {
                       {post.titulo}
                     </h3>
                     <p className="font-body text-xs text-surface-foreground/50 mb-3">
-                      {AUTORES[post.autor] || "Humana Ortopedia"} · {formatarData(post.data)} · {post.tempoLeitura} min de leitura
+                      {([] as string[]).concat(post.autor).map((a) => AUTORES[a]).filter(Boolean).join(" e ") || "Humana Ortopedia"} · {formatarData(post.data)} · {post.tempoLeitura} min de leitura
                     </p>
                     <p className="font-body text-sm text-surface-foreground/70 leading-relaxed line-clamp-3 mb-4 flex-1" style={{ textWrap: "pretty" }}>
                       {post.resumo}

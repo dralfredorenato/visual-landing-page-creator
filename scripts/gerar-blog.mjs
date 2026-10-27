@@ -83,7 +83,8 @@ function validar(post, corpo) {
   }
   if (post.slug && !/^[a-z0-9]+(-[a-z0-9]+)*$/.test(post.slug)) erros.push("slug deve ter só letras minúsculas, números e hífens");
   if (post.data && !/^\d{4}-\d{2}-\d{2}$/.test(post.data)) erros.push("data deve estar no formato AAAA-MM-DD");
-  if (post.autor && !AUTORES[post.autor]) erros.push(`autor desconhecido: ${post.autor}`);
+  // autor pode ser "alfredo", "carlos" ou uma lista, ex.: ["alfredo", "carlos"]
+  for (const a of [].concat(post.autor || [])) if (!AUTORES[a]) erros.push(`autor desconhecido: ${a}`);
   if (post.descricao && post.descricao.length > 160) erros.push(`descricao com ${post.descricao.length} caracteres (máximo 160)`);
   const texto = [post.titulo, post.descricao, post.resumo, corpo].join(" ");
   for (const re of PROIBIDO) if (re.test(texto)) erros.push(`termo vetado encontrado: ${re}`);
@@ -273,7 +274,7 @@ const clinicaSchema = {
 
 /* ---------- paginas ---------- */
 function paginaPost(post, corpo) {
-  const autor = AUTORES[post.autor];
+  const autores = [].concat(post.autor).map((a) => AUTORES[a]);
   const url = `${SITE}/blog/${post.slug}/`;
   const minutos = tempoLeitura(corpo);
   const schema = {
@@ -285,7 +286,7 @@ function paginaPost(post, corpo) {
     dateModified: post.atualizado || post.data,
     inLanguage: "pt-BR",
     mainEntityOfPage: url,
-    author: { "@type": "Physician", name: autor.nome, jobTitle: autor.titulo, medicalSpecialty: autor.especialidade, identifier: autor.registro },
+    author: autores.map((autor) => ({ "@type": "Physician", name: autor.nome, jobTitle: autor.titulo, medicalSpecialty: autor.especialidade, identifier: autor.registro })),
     publisher: clinicaSchema,
   };
   const relacionada = post.paginaRelacionada
@@ -328,21 +329,21 @@ function paginaPost(post, corpo) {
         <a class="artigo__voltar" href="/blog/">&larr; Todos os artigos</a>
         <span class="eyebrow">${esc(post.categoria)}</span>
         <h1 class="artigo__titulo">${esc(post.titulo)}</h1>
-        <p class="artigo__meta">${esc(autor.nome)} · <time datetime="${post.data}">${dataExtenso(post.data)}</time> · ${minutos} min de leitura</p>
+        <p class="artigo__meta">${autores.map((a) => esc(a.nome)).join(" e ")} · <time datetime="${post.data}">${dataExtenso(post.data)}</time> · ${minutos} min de leitura</p>
       </header>
       <div class="artigo__corpo estreito">
 ${corpo.trim()}
       </div>
       <div class="estreito">
         ${relacionada}
-        <section class="autor" aria-label="Sobre o autor">
+        ${autores.map((autor) => `<section class="autor" aria-label="Sobre o autor">
           <div class="autor__inicial" aria-hidden="true">${esc(autor.nome.replace("Dr. ", "")[0])}</div>
           <div>
             <p class="autor__nome">${esc(autor.nome)}</p>
             <p class="autor__titulo">${esc(autor.titulo)}</p>
             <p class="autor__registro">${esc(autor.registro)} · Humana Ortopedia e Medicina da Dor</p>
           </div>
-        </section>
+        </section>`).join("\n        ")}
       </div>
     </article>
     ${ctaFinal(post.ctaTitulo || "Quer entender o que está causando a sua dor?", post.whatsTexto)}
