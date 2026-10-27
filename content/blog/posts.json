@@ -17,7 +17,10 @@
     "resumo": "Dor espalhada pelo corpo, cansaço e sono que não descansa? Entenda o que pode estar por trás, como a fibromialgia é diagnosticada e quando procurar ajuda.",
     "categoria": "Dor Crônica",
     "data": "2026-10-20",
-    "autor": "alfredo",
+    "autor": [
+      "alfredo",
+      "carlos"
+    ],
     "whatsTexto": "Olá, li o artigo sobre dor no corpo todo e quero agendar uma avaliação",
     "ctaTitulo": "A dor no corpo já faz parte da sua rotina?"
   },

@@ -6,7 +6,7 @@
     "categoria": "Autismo e Neurodiversidade",
     "data": "2026-10-27",
     "autor": "alfredo",
-    "tempoLeitura": 5
+    "tempoLeitura": 6
   },
   {
     "slug": "dor-no-corpo-todo-o-que-pode-ser",
@@ -14,7 +14,10 @@
     "resumo": "Dor espalhada pelo corpo, cansaço e sono que não descansa? Entenda o que pode estar por trás, como a fibromialgia é diagnosticada e quando procurar ajuda.",
     "categoria": "Dor Crônica",
     "data": "2026-10-20",
-    "autor": "alfredo",
+    "autor": [
+      "alfredo",
+      "carlos"
+    ],
     "tempoLeitura": 6
   },
   {
