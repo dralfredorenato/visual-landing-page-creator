@@ -1,5 +1,23 @@
 [
   {
+    "slug": "dor-nas-costas-o-que-fazer",
+    "titulo": "Dor nas costas: o que fazer primeiro e quando procurar avaliação",
+    "descricao": "Travou as costas? Veja o que fazer nos primeiros dias, quando o exame de imagem ajuda, os sinais de alerta e as opções de tratamento.",
+    "resumo": "As costas travaram e a dor não passa? Entenda o que fazer nos primeiros dias, quais sinais pedem atendimento rápido e como é a avaliação.",
+    "categoria": "Coluna",
+    "data": "2026-11-10",
+    "autor": [
+      "alfredo",
+      "carlos"
+    ],
+    "whatsTexto": "Olá, li o artigo sobre dor nas costas e quero agendar uma avaliação",
+    "ctaTitulo": "As costas travaram e a dor não melhora?",
+    "paginaRelacionada": {
+      "titulo": "Dor na coluna: avaliação em Porto Alegre",
+      "url": "/dor-na-coluna/"
+    }
+  },
+  {
     "slug": "dor-no-tendao-de-aquiles",
     "titulo": "Dor no tendão de Aquiles: o que é tendinopatia e como se trata",
     "descricao": "Dor atrás do calcanhar ao começar a andar? Entenda a tendinopatia do Aquiles, por que acontece, o tratamento com mais respaldo e os sinais de alerta.",
