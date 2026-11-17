@@ -1,5 +1,20 @@
 [
   {
+    "slug": "artrose-no-joelho-o-que-ajuda",
+    "titulo": "Artrose no joelho: o que ajuda de verdade no dia a dia",
+    "descricao": "Artrose no joelho tem cuidado ativo. Veja o que a ciência mostra sobre exercício, peso, infiltrações, sinais de alerta e como é a avaliação.",
+    "resumo": "O joelho dói ao subir escada e endurece de manhã? Entenda a artrose, por que o exercício orientado está no centro do cuidado e quando procurar avaliação.",
+    "categoria": "Joelho",
+    "data": "2026-11-17",
+    "autor": "alfredo",
+    "whatsTexto": "Olá, li o artigo sobre artrose no joelho e quero agendar uma avaliação",
+    "ctaTitulo": "O joelho está limitando a sua rotina?",
+    "paginaRelacionada": {
+      "titulo": "Infiltração no joelho em Porto Alegre",
+      "url": "/infiltracao-joelho/"
+    }
+  },
+  {
     "slug": "dor-nas-costas-o-que-fazer",
     "titulo": "Dor nas costas: o que fazer primeiro e quando procurar avaliação",
     "descricao": "Travou as costas? Veja o que fazer nos primeiros dias, quando o exame de imagem ajuda, os sinais de alerta e as opções de tratamento.",
