@@ -39,9 +39,15 @@
   <!-- BLOG:INICIO (gerado por scripts/gerar-blog.mjs) -->
   <url>
     <loc>https://humanaortopedia.com.br/blog/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://humanaortopedia.com.br/blog/artrose-no-joelho-o-que-ajuda/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://humanaortopedia.com.br/blog/dor-nas-costas-o-que-fazer/</loc>
