@@ -85,6 +85,11 @@
       .hero .botao-whats { width:100%; }
       .cta-final .mapa { display:flex; justify-content:center; margin:.55rem 0 0; }
     }
+    .medicao { max-width:48ch; margin-top:1rem; font-size:.86rem; color:var(--cor-texto-suave); border-top:1px solid var(--cor-borda); padding-top:.65rem; }
+    .medicao__acoes { display:flex; flex-wrap:wrap; gap:.4rem .75rem; margin-top:.3rem; }
+    .medicao button,.preferencias { font:inherit; color:var(--cor-navy); background:none; border:0; cursor:pointer; text-decoration:underline; text-underline-offset:.2em; min-height:44px; padding:0 .2rem; }
+    .medicao button:focus-visible,.preferencias:focus-visible { outline:3px solid var(--cor-azul); outline-offset:3px; }
+    .rodape__links { display:flex; flex-wrap:wrap; align-items:center; column-gap:1rem; }
   </style>
 </head>
 <body>
@@ -104,6 +109,13 @@
           <p class="intro">Se a dor atrapalha sua rotina, a consulta é o primeiro passo para entender o que está acontecendo e conversar sobre as opções de cuidado.</p>
           <a class="botao-whats" href="https://wa.me/5551920004467?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20particular%20pela%20p%C3%A1gina%20da%20Humana." target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp</a>
           <p class="hero__nota">A recepção informa valores e confirma o horário. Não atendemos Unimed nem IPE Saúde.</p>
+          <aside class="medicao" id="aviso-medicao" aria-label="Preferência de medição" hidden>
+            <p>Se você permitir, o Google Ads poderá medir o clique no WhatsApp. O agendamento funciona mesmo sem medição.</p>
+            <div class="medicao__acoes">
+              <button type="button" id="permitir-medicao">Permitir medição</button>
+              <button type="button" id="recusar-medicao">Não permitir</button>
+            </div>
+          </aside>
         </div>
         <figure class="hero__foto">
           <img src="/consulta-particular/equipe-humana.webp" alt="Equipe médica da Humana Ortopedia" width="733" height="1100" fetchpriority="high">
@@ -145,8 +157,79 @@
   <footer class="rodape">
     <div class="container">
       <p><strong>Humana Ortopedia e Saúde Ltda.</strong> · Registro CREMERS 21712<br>Diretor técnico-médico: Dr. Alfredo Renato Metzger Filho · CRM-RS 39.343<br>Ortopedia e Traumatologia · RQE 44.522</p>
-      <p><a href="/privacidade">Política de privacidade</a></p>
+      <p class="rodape__links"><a href="/privacidade">Política de privacidade</a><button class="preferencias" type="button" id="preferencias-medicao" hidden>Preferências de medição</button></p>
     </div>
   </footer>
+  <script>
+    (() => {
+      const chave = 'humana_consulta_medicao_v1';
+      const conta = 'AW-17642002434';
+      const destino = conta + '/wjImCJLDys4cEIKwrtxB';
+      const pagina = 'https://www.humanaortopedia.com.br/consulta-particular/';
+      const aviso = document.getElementById('aviso-medicao');
+      const permitir = document.getElementById('permitir-medicao');
+      const recusar = document.getElementById('recusar-medicao');
+      const preferencias = document.getElementById('preferencias-medicao');
+      let escolha = null;
+      let tagIniciada = false;
+      const negado = {
+        ad_storage: 'denied',
+        analytics_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      };
+
+      try { escolha = localStorage.getItem(chave); } catch { /* medição continua opcional */ }
+
+      function iniciarTag() {
+        if (tagIniciada) return;
+        tagIniciada = true;
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('consent', 'default', negado);
+        window.gtag('consent', 'update', { ...negado, ad_storage: 'granted' });
+        window.gtag('set', { allow_ad_personalization_signals: false, restricted_data_processing: true });
+        window.gtag('js', new Date());
+        window.gtag('config', conta, { send_page_view: false, page_location: pagina, page_referrer: '' });
+        const tag = document.createElement('script');
+        tag.async = true;
+        tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + conta;
+        tag.referrerPolicy = 'no-referrer';
+        document.head.append(tag);
+      }
+
+      function registrarEscolha(valor) {
+        escolha = valor;
+        try { localStorage.setItem(chave, valor); } catch { /* vale nesta página */ }
+        aviso.hidden = true;
+        document.querySelector('.hero a.botao-whats').focus({ preventScroll: true });
+        // A tag só é carregada para quem aceita. Não emita conversões retroativas.
+        if (valor === 'permitido') {
+          if (tagIniciada) window.gtag('consent', 'update', { ...negado, ad_storage: 'granted' });
+          else iniciarTag();
+        } else if (tagIniciada) {
+          // A revogação interrompe o envio de eventos e desativa o armazenamento.
+          window.gtag('consent', 'update', negado);
+        }
+      }
+
+      preferencias.hidden = false;
+      aviso.hidden = escolha === 'permitido' || escolha === 'recusado';
+      if (escolha === 'permitido') iniciarTag();
+      permitir.addEventListener('click', () => registrarEscolha('permitido'));
+      recusar.addEventListener('click', () => registrarEscolha('recusado'));
+      preferencias.addEventListener('click', () => {
+        aviso.hidden = false;
+        permitir.focus();
+      });
+      for (const botao of document.querySelectorAll('a.botao-whats')) {
+        botao.addEventListener('click', () => {
+          if (escolha !== 'permitido' || typeof window.gtag !== 'function') return;
+          // Só o evento de clique: não leia o link ou a mensagem e não altere a navegação.
+          window.gtag('event', 'conversion', { send_to: destino });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
